@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		530CDC8C8D4A48EEAAA43D23 /* Pods_Aquatic_Saver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8515D166891310D1ED4D7E95 /* Pods_Aquatic_Saver.framework */; };
 		A6344A81213449EC0064AABB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6344A80213449EC0064AABB /* AppDelegate.swift */; };
 		A6344A83213449EC0064AABB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6344A82213449EC0064AABB /* ViewController.swift */; };
 		A6344A86213449EC0064AABB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6344A84213449EC0064AABB /* Main.storyboard */; };
 		A6344A88213449EC0064AABB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6344A87213449EC0064AABB /* Assets.xcassets */; };
 		A6344A8B213449EC0064AABB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6344A89213449EC0064AABB /* LaunchScreen.storyboard */; };
+		A6344A9321344AF60064AABB /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A6344A9221344AF60064AABB /* Podfile */; };
+		A6344A9821344DC60064AABB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A6344A9721344DC60064AABB /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		53BD77F7A13C404A49765885 /* Pods-Aquatic Saver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aquatic Saver.release.xcconfig"; path = "Pods/Target Support Files/Pods-Aquatic Saver/Pods-Aquatic Saver.release.xcconfig"; sourceTree = "<group>"; };
+		8515D166891310D1ED4D7E95 /* Pods_Aquatic_Saver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Aquatic_Saver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6344A7D213449EC0064AABB /* Aquatic Saver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aquatic Saver.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6344A80213449EC0064AABB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6344A82213449EC0064AABB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +27,9 @@
 		A6344A87213449EC0064AABB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6344A8A213449EC0064AABB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A6344A8C213449EC0064AABB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6344A9221344AF60064AABB /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A6344A9721344DC60064AABB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		FA58BD56942DFC47B4C1A9BC /* Pods-Aquatic Saver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aquatic Saver.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Aquatic Saver/Pods-Aquatic Saver.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +37,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				530CDC8C8D4A48EEAAA43D23 /* Pods_Aquatic_Saver.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B1C082CEBAB96DAA4AFED1F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FA58BD56942DFC47B4C1A9BC /* Pods-Aquatic Saver.debug.xcconfig */,
+				53BD77F7A13C404A49765885 /* Pods-Aquatic Saver.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A6344A74213449EC0064AABB = {
 			isa = PBXGroup;
 			children = (
+				A6344A9721344DC60064AABB /* README.md */,
+				A6344A9221344AF60064AABB /* Podfile */,
 				A6344A7F213449EC0064AABB /* Aquatic Saver */,
 				A6344A7E213449EC0064AABB /* Products */,
+				3B1C082CEBAB96DAA4AFED1F /* Pods */,
+				BE34C6C9537D1B4E7A38FDAE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +76,46 @@
 		A6344A7F213449EC0064AABB /* Aquatic Saver */ = {
 			isa = PBXGroup;
 			children = (
-				A6344A80213449EC0064AABB /* AppDelegate.swift */,
-				A6344A82213449EC0064AABB /* ViewController.swift */,
-				A6344A84213449EC0064AABB /* Main.storyboard */,
-				A6344A87213449EC0064AABB /* Assets.xcassets */,
-				A6344A89213449EC0064AABB /* LaunchScreen.storyboard */,
-				A6344A8C213449EC0064AABB /* Info.plist */,
+				A6344A9621344B990064AABB /* Model */,
+				A6344A9521344B710064AABB /* View */,
+				A6344A9421344B5D0064AABB /* Helpers */,
 			);
 			path = "Aquatic Saver";
+			sourceTree = "<group>";
+		};
+		A6344A9421344B5D0064AABB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A6344A8C213449EC0064AABB /* Info.plist */,
+				A6344A80213449EC0064AABB /* AppDelegate.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A6344A9521344B710064AABB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A6344A82213449EC0064AABB /* ViewController.swift */,
+				A6344A84213449EC0064AABB /* Main.storyboard */,
+				A6344A89213449EC0064AABB /* LaunchScreen.storyboard */,
+				A6344A87213449EC0064AABB /* Assets.xcassets */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A6344A9621344B990064AABB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BE34C6C9537D1B4E7A38FDAE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8515D166891310D1ED4D7E95 /* Pods_Aquatic_Saver.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +125,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A6344A8F213449EC0064AABB /* Build configuration list for PBXNativeTarget "Aquatic Saver" */;
 			buildPhases = (
+				13EDC5CB0D5A8BF562528E36 /* [CP] Check Pods Manifest.lock */,
 				A6344A79213449EC0064AABB /* Sources */,
 				A6344A7A213449EC0064AABB /* Frameworks */,
 				A6344A7B213449EC0064AABB /* Resources */,
+				F61685E66CA67E1D8D9990CD /* [CP] Embed Pods Frameworks */,
+				4F1302EA952DCDB6D33AEFE6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -124,11 +181,72 @@
 			files = (
 				A6344A8B213449EC0064AABB /* LaunchScreen.storyboard in Resources */,
 				A6344A88213449EC0064AABB /* Assets.xcassets in Resources */,
+				A6344A9821344DC60064AABB /* README.md in Resources */,
+				A6344A9321344AF60064AABB /* Podfile in Resources */,
 				A6344A86213449EC0064AABB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		13EDC5CB0D5A8BF562528E36 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Aquatic Saver-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4F1302EA952DCDB6D33AEFE6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Aquatic Saver/Pods-Aquatic Saver-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Aquatic Saver/Pods-Aquatic Saver-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F61685E66CA67E1D8D9990CD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Aquatic Saver/Pods-Aquatic Saver-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Aquatic Saver/Pods-Aquatic Saver-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A6344A79213449EC0064AABB /* Sources */ = {
@@ -278,11 +396,13 @@
 		};
 		A6344A90213449EC0064AABB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA58BD56942DFC47B4C1A9BC /* Pods-Aquatic Saver.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HXMC6PFDX2;
-				INFOPLIST_FILE = "Aquatic Saver/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Aquatic Saver/Helpers/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -290,17 +410,19 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Ergovit.Aquatic-Saver";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		A6344A91213449EC0064AABB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53BD77F7A13C404A49765885 /* Pods-Aquatic Saver.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HXMC6PFDX2;
-				INFOPLIST_FILE = "Aquatic Saver/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Aquatic Saver/Helpers/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,7 +430,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Ergovit.Aquatic-Saver";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
