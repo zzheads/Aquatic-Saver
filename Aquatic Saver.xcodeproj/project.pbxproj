@@ -8,27 +8,49 @@
 
 /* Begin PBXBuildFile section */
 		530CDC8C8D4A48EEAAA43D23 /* Pods_Aquatic_Saver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8515D166891310D1ED4D7E95 /* Pods_Aquatic_Saver.framework */; };
+		A61CBE5121356A2F00A9AF55 /* UIElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61CBE5021356A2F00A9AF55 /* UIElements.swift */; };
+		A61CBE5521357D5200A9AF55 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61CBE5421357D5200A9AF55 /* RegisterViewController.swift */; };
+		A61CBE5721357F1300A9AF55 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61CBE5621357F1300A9AF55 /* Router.swift */; };
+		A61CBE592135C01100A9AF55 /* UserDefaults +.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61CBE582135C01100A9AF55 /* UserDefaults +.swift */; };
 		A6344A81213449EC0064AABB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6344A80213449EC0064AABB /* AppDelegate.swift */; };
-		A6344A83213449EC0064AABB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6344A82213449EC0064AABB /* ViewController.swift */; };
+		A6344A83213449EC0064AABB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6344A82213449EC0064AABB /* LoginViewController.swift */; };
 		A6344A86213449EC0064AABB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6344A84213449EC0064AABB /* Main.storyboard */; };
 		A6344A88213449EC0064AABB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6344A87213449EC0064AABB /* Assets.xcassets */; };
 		A6344A8B213449EC0064AABB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6344A89213449EC0064AABB /* LaunchScreen.storyboard */; };
 		A6344A9321344AF60064AABB /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = A6344A9221344AF60064AABB /* Podfile */; };
 		A6344A9821344DC60064AABB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A6344A9721344DC60064AABB /* README.md */; };
+		A6344AB42134836A0064AABB /* RobotoCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6344AAD213483680064AABB /* RobotoCondensed-Bold.ttf */; };
+		A6344AB52134836A0064AABB /* RobotoCondensed-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6344AAE213483680064AABB /* RobotoCondensed-BoldItalic.ttf */; };
+		A6344AB62134836A0064AABB /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = A6344AAF213483690064AABB /* LICENSE.txt */; };
+		A6344AB72134836A0064AABB /* RobotoCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6344AB0213483690064AABB /* RobotoCondensed-Light.ttf */; };
+		A6344AB82134836A0064AABB /* RobotoCondensed-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6344AB1213483690064AABB /* RobotoCondensed-Italic.ttf */; };
+		A6344AB92134836A0064AABB /* RobotoCondensed-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6344AB2213483690064AABB /* RobotoCondensed-LightItalic.ttf */; };
+		A6344ABA2134836A0064AABB /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6344AB3213483690064AABB /* RobotoCondensed-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		53BD77F7A13C404A49765885 /* Pods-Aquatic Saver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aquatic Saver.release.xcconfig"; path = "Pods/Target Support Files/Pods-Aquatic Saver/Pods-Aquatic Saver.release.xcconfig"; sourceTree = "<group>"; };
 		8515D166891310D1ED4D7E95 /* Pods_Aquatic_Saver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Aquatic_Saver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A61CBE5021356A2F00A9AF55 /* UIElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIElements.swift; sourceTree = "<group>"; };
+		A61CBE5421357D5200A9AF55 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		A61CBE5621357F1300A9AF55 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		A61CBE582135C01100A9AF55 /* UserDefaults +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults +.swift"; sourceTree = "<group>"; };
 		A6344A7D213449EC0064AABB /* Aquatic Saver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aquatic Saver.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6344A80213449EC0064AABB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A6344A82213449EC0064AABB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A6344A82213449EC0064AABB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A6344A85213449EC0064AABB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A6344A87213449EC0064AABB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6344A8A213449EC0064AABB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A6344A8C213449EC0064AABB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6344A9221344AF60064AABB /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A6344A9721344DC60064AABB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A6344AAD213483680064AABB /* RobotoCondensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Bold.ttf"; sourceTree = "<group>"; };
+		A6344AAE213483680064AABB /* RobotoCondensed-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-BoldItalic.ttf"; sourceTree = "<group>"; };
+		A6344AAF213483690064AABB /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		A6344AB0213483690064AABB /* RobotoCondensed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Light.ttf"; sourceTree = "<group>"; };
+		A6344AB1213483690064AABB /* RobotoCondensed-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Italic.ttf"; sourceTree = "<group>"; };
+		A6344AB2213483690064AABB /* RobotoCondensed-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-LightItalic.ttf"; sourceTree = "<group>"; };
+		A6344AB3213483690064AABB /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
 		FA58BD56942DFC47B4C1A9BC /* Pods-Aquatic Saver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aquatic Saver.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Aquatic Saver/Pods-Aquatic Saver.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +101,7 @@
 				A6344A9621344B990064AABB /* Model */,
 				A6344A9521344B710064AABB /* View */,
 				A6344A9421344B5D0064AABB /* Helpers */,
+				A6344A9A21347B4B0064AABB /* Resources */,
 			);
 			path = "Aquatic Saver";
 			sourceTree = "<group>";
@@ -86,8 +109,9 @@
 		A6344A9421344B5D0064AABB /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				A6344A8C213449EC0064AABB /* Info.plist */,
+				A61CBE582135C01100A9AF55 /* UserDefaults +.swift */,
 				A6344A80213449EC0064AABB /* AppDelegate.swift */,
+				A6344A8C213449EC0064AABB /* Info.plist */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -95,10 +119,12 @@
 		A6344A9521344B710064AABB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A6344A82213449EC0064AABB /* ViewController.swift */,
+				A6344A82213449EC0064AABB /* LoginViewController.swift */,
+				A61CBE5421357D5200A9AF55 /* RegisterViewController.swift */,
 				A6344A84213449EC0064AABB /* Main.storyboard */,
 				A6344A89213449EC0064AABB /* LaunchScreen.storyboard */,
-				A6344A87213449EC0064AABB /* Assets.xcassets */,
+				A61CBE5021356A2F00A9AF55 /* UIElements.swift */,
+				A61CBE5621357F1300A9AF55 /* Router.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -108,6 +134,30 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A6344A9A21347B4B0064AABB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A6344A9E213483090064AABB /* Font */,
+				A6344A87213449EC0064AABB /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A6344A9E213483090064AABB /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				A6344AAF213483690064AABB /* LICENSE.txt */,
+				A6344AAD213483680064AABB /* RobotoCondensed-Bold.ttf */,
+				A6344AAE213483680064AABB /* RobotoCondensed-BoldItalic.ttf */,
+				A6344AB1213483690064AABB /* RobotoCondensed-Italic.ttf */,
+				A6344AB0213483690064AABB /* RobotoCondensed-Light.ttf */,
+				A6344AB2213483690064AABB /* RobotoCondensed-LightItalic.ttf */,
+				A6344AB3213483690064AABB /* RobotoCondensed-Regular.ttf */,
+			);
+			name = Font;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		BE34C6C9537D1B4E7A38FDAE /* Frameworks */ = {
@@ -179,11 +229,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6344AB52134836A0064AABB /* RobotoCondensed-BoldItalic.ttf in Resources */,
+				A6344AB72134836A0064AABB /* RobotoCondensed-Light.ttf in Resources */,
+				A6344AB92134836A0064AABB /* RobotoCondensed-LightItalic.ttf in Resources */,
+				A6344AB42134836A0064AABB /* RobotoCondensed-Bold.ttf in Resources */,
 				A6344A8B213449EC0064AABB /* LaunchScreen.storyboard in Resources */,
 				A6344A88213449EC0064AABB /* Assets.xcassets in Resources */,
+				A6344ABA2134836A0064AABB /* RobotoCondensed-Regular.ttf in Resources */,
+				A6344AB62134836A0064AABB /* LICENSE.txt in Resources */,
 				A6344A9821344DC60064AABB /* README.md in Resources */,
 				A6344A9321344AF60064AABB /* Podfile in Resources */,
 				A6344A86213449EC0064AABB /* Main.storyboard in Resources */,
+				A6344AB82134836A0064AABB /* RobotoCondensed-Italic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,11 +291,15 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Aquatic Saver/Pods-Aquatic Saver-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
+				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,8 +314,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6344A83213449EC0064AABB /* ViewController.swift in Sources */,
+				A6344A83213449EC0064AABB /* LoginViewController.swift in Sources */,
+				A61CBE5121356A2F00A9AF55 /* UIElements.swift in Sources */,
+				A61CBE5721357F1300A9AF55 /* Router.swift in Sources */,
+				A61CBE592135C01100A9AF55 /* UserDefaults +.swift in Sources */,
 				A6344A81213449EC0064AABB /* AppDelegate.swift in Sources */,
+				A61CBE5521357D5200A9AF55 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
