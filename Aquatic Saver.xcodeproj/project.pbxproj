@@ -12,6 +12,11 @@
 		A61CBE5521357D5200A9AF55 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61CBE5421357D5200A9AF55 /* RegisterViewController.swift */; };
 		A61CBE5721357F1300A9AF55 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61CBE5621357F1300A9AF55 /* Router.swift */; };
 		A61CBE592135C01100A9AF55 /* UserDefaults +.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61CBE582135C01100A9AF55 /* UserDefaults +.swift */; };
+		A62B449B2136B3D90083D8EF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62B449A2136B3D90083D8EF /* SettingsViewController.swift */; };
+		A62B449D2136B64C0083D8EF /* StringCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A62B449C2136B64C0083D8EF /* StringCell.xib */; };
+		A62B44A02136B7230083D8EF /* StringCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62B449F2136B7230083D8EF /* StringCell.swift */; };
+		A62B44A32136E3DE0083D8EF /* BoolCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A62B44A22136E3DE0083D8EF /* BoolCell.xib */; };
+		A62B44A52136E48D0083D8EF /* BoolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62B44A42136E48D0083D8EF /* BoolCell.swift */; };
 		A6344A81213449EC0064AABB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6344A80213449EC0064AABB /* AppDelegate.swift */; };
 		A6344A83213449EC0064AABB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6344A82213449EC0064AABB /* LoginViewController.swift */; };
 		A6344A86213449EC0064AABB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6344A84213449EC0064AABB /* Main.storyboard */; };
@@ -26,6 +31,8 @@
 		A6344AB82134836A0064AABB /* RobotoCondensed-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6344AB1213483690064AABB /* RobotoCondensed-Italic.ttf */; };
 		A6344AB92134836A0064AABB /* RobotoCondensed-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6344AB2213483690064AABB /* RobotoCondensed-LightItalic.ttf */; };
 		A6344ABA2134836A0064AABB /* RobotoCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6344AB3213483690064AABB /* RobotoCondensed-Regular.ttf */; };
+		A6DC7E6B2136A3DB00BB7552 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DC7E6A2136A3DB00BB7552 /* Setting.swift */; };
+		A6DC7E6D2136A97500BB7552 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DC7E6C2136A97500BB7552 /* JSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +42,11 @@
 		A61CBE5421357D5200A9AF55 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		A61CBE5621357F1300A9AF55 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		A61CBE582135C01100A9AF55 /* UserDefaults +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults +.swift"; sourceTree = "<group>"; };
+		A62B449A2136B3D90083D8EF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A62B449C2136B64C0083D8EF /* StringCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StringCell.xib; sourceTree = "<group>"; };
+		A62B449F2136B7230083D8EF /* StringCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCell.swift; sourceTree = "<group>"; };
+		A62B44A22136E3DE0083D8EF /* BoolCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BoolCell.xib; sourceTree = "<group>"; };
+		A62B44A42136E48D0083D8EF /* BoolCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolCell.swift; sourceTree = "<group>"; };
 		A6344A7D213449EC0064AABB /* Aquatic Saver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aquatic Saver.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6344A80213449EC0064AABB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6344A82213449EC0064AABB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +63,8 @@
 		A6344AB1213483690064AABB /* RobotoCondensed-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Italic.ttf"; sourceTree = "<group>"; };
 		A6344AB2213483690064AABB /* RobotoCondensed-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-LightItalic.ttf"; sourceTree = "<group>"; };
 		A6344AB3213483690064AABB /* RobotoCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoCondensed-Regular.ttf"; sourceTree = "<group>"; };
+		A6DC7E6A2136A3DB00BB7552 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		A6DC7E6C2136A97500BB7552 /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		FA58BD56942DFC47B4C1A9BC /* Pods-Aquatic Saver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aquatic Saver.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Aquatic Saver/Pods-Aquatic Saver.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,6 +87,24 @@
 				53BD77F7A13C404A49765885 /* Pods-Aquatic Saver.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		A62B449E2136B7100083D8EF /* SettingCell */ = {
+			isa = PBXGroup;
+			children = (
+				A62B449C2136B64C0083D8EF /* StringCell.xib */,
+				A62B449F2136B7230083D8EF /* StringCell.swift */,
+			);
+			path = SettingCell;
+			sourceTree = "<group>";
+		};
+		A62B44A12136E3BB0083D8EF /* BoolCell */ = {
+			isa = PBXGroup;
+			children = (
+				A62B44A22136E3DE0083D8EF /* BoolCell.xib */,
+				A62B44A42136E48D0083D8EF /* BoolCell.swift */,
+			);
+			path = BoolCell;
 			sourceTree = "<group>";
 		};
 		A6344A74213449EC0064AABB = {
@@ -112,6 +144,8 @@
 				A61CBE582135C01100A9AF55 /* UserDefaults +.swift */,
 				A6344A80213449EC0064AABB /* AppDelegate.swift */,
 				A6344A8C213449EC0064AABB /* Info.plist */,
+				A6DC7E6A2136A3DB00BB7552 /* Setting.swift */,
+				A6DC7E6C2136A97500BB7552 /* JSON.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -119,8 +153,11 @@
 		A6344A9521344B710064AABB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A62B44A12136E3BB0083D8EF /* BoolCell */,
+				A62B449E2136B7100083D8EF /* SettingCell */,
 				A6344A82213449EC0064AABB /* LoginViewController.swift */,
 				A61CBE5421357D5200A9AF55 /* RegisterViewController.swift */,
+				A62B449A2136B3D90083D8EF /* SettingsViewController.swift */,
 				A6344A84213449EC0064AABB /* Main.storyboard */,
 				A6344A89213449EC0064AABB /* LaunchScreen.storyboard */,
 				A61CBE5021356A2F00A9AF55 /* UIElements.swift */,
@@ -240,6 +277,8 @@
 				A6344A9821344DC60064AABB /* README.md in Resources */,
 				A6344A9321344AF60064AABB /* Podfile in Resources */,
 				A6344A86213449EC0064AABB /* Main.storyboard in Resources */,
+				A62B44A32136E3DE0083D8EF /* BoolCell.xib in Resources */,
+				A62B449D2136B64C0083D8EF /* StringCell.xib in Resources */,
 				A6344AB82134836A0064AABB /* RobotoCondensed-Italic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,8 +357,13 @@
 				A61CBE5121356A2F00A9AF55 /* UIElements.swift in Sources */,
 				A61CBE5721357F1300A9AF55 /* Router.swift in Sources */,
 				A61CBE592135C01100A9AF55 /* UserDefaults +.swift in Sources */,
+				A6DC7E6B2136A3DB00BB7552 /* Setting.swift in Sources */,
 				A6344A81213449EC0064AABB /* AppDelegate.swift in Sources */,
+				A62B44A52136E48D0083D8EF /* BoolCell.swift in Sources */,
 				A61CBE5521357D5200A9AF55 /* RegisterViewController.swift in Sources */,
+				A6DC7E6D2136A97500BB7552 /* JSON.swift in Sources */,
+				A62B44A02136B7230083D8EF /* StringCell.swift in Sources */,
+				A62B449B2136B3D90083D8EF /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

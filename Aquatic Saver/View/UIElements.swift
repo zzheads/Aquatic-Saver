@@ -12,6 +12,7 @@ import Material
 struct UIElements {
     struct AppColor {
         static let darkBlue = UIColor(red: 33/255, green: 80/255, blue: 113/255, alpha: 1.0)
+        static let lightBlue = UIColor(red: 224/255, green: 239/255, blue: 251/255, alpha: 1.0)
     }
     
     struct Font {
@@ -30,15 +31,25 @@ struct UIElements {
         override func viewDidLoad() {
             super.viewDidLoad()
             self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.backPressed(_:)))
-            if let font = UIElements.Font.bold(12.0) {
-                let attributes = [NSAttributedStringKey.font: font]
-                self.navigationItem.leftBarButtonItem?.setTitleTextAttributes(attributes, for: .normal)
-                self.navigationItem.leftBarButtonItem?.setTitleTextAttributes(attributes, for: .highlighted)
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(self.settingsPressed(_:)))
+            ViewController.setAttributes(for: [self.navigationItem.leftBarButtonItem, self.navigationItem.rightBarButtonItem])
+        }
+        
+        class func setAttributes(for buttons: [UIBarButtonItem?]) {
+            guard let font = UIElements.Font.bold(12.0) else { return }
+            let attributes = [NSAttributedStringKey.font: font]
+            buttons.forEach {
+                $0?.setTitleTextAttributes(attributes, for: .normal)
+                $0?.setTitleTextAttributes(attributes, for: .highlighted)
             }
         }
         
         @objc func backPressed(_ sender: UIBarButtonItem) {
             self.navigationController?.popViewController(animated: true)
+        }
+        
+        @objc func settingsPressed(_ sender: UIBarButtonItem) {
+            self.navigationController?.performSegue(withIdentifier: Router.SegueID.toSettings.rawValue, sender: self)
         }
     }
     

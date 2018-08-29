@@ -11,5 +11,7 @@ import UIKit
 class Router {
     enum SegueID: String {
         case toRegister
+        case toSettings
+        case toMain
     }
 }
