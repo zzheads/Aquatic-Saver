@@ -46,7 +46,7 @@ class LoginViewController: UIElements.ViewController, DefaultsLoadable {
 
 extension LoginViewController {
     @objc func registerPressed(_ sender: FlatButton) {
-        self.performSegue(withIdentifier: Router.SegueID.toRegister.rawValue, sender: self)
+        self.performSegue(withIdentifier: Router.SegueID.toRegisterUser.rawValue, sender: self)
     }
     
     @objc func loginPressed(_ sender: FlatButton) {

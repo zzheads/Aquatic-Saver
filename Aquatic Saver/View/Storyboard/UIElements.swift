@@ -27,12 +27,15 @@ struct UIElements {
         }
     }
     
+    static let settingsImage = UIImage(named: "Settings2")
+    
     class ViewController: UIViewController {
         override func viewDidLoad() {
             super.viewDidLoad()
             self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.backPressed(_:)))
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(self.settingsPressed(_:)))
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIElements.settingsImage?.crop(toWidth: 20, toHeight: 20), style: .plain, target: self, action: #selector(self.settingsPressed(_:)))
             ViewController.setAttributes(for: [self.navigationItem.leftBarButtonItem, self.navigationItem.rightBarButtonItem])
+            self.navigationItem.title = "Aquatic Saver"
         }
         
         class func setAttributes(for buttons: [UIBarButtonItem?]) {

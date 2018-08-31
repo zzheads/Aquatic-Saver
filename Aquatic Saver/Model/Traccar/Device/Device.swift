@@ -10,7 +10,7 @@ import Foundation
 
 class Device: Codable {
     var id              : Int?
-    var attributes      : DeviceAttributes?
+    var attributes      : Attributes?
     var name            : String?
     var phone           : String?
     var uniqueId        : String?

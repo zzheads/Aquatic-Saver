@@ -44,7 +44,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Aquatic Saver" id="aoB-Vb-VMO"/>
                     <connections>
-                        <segue destination="XjV-Ta-Nqt" kind="show" identifier="toRegister" id="ooE-YN-cPX"/>
+                        <segue destination="XjV-Ta-Nqt" kind="show" identifier="toRegisterUser" id="ooE-YN-cPX"/>
                         <segue destination="nYI-uJ-ren" kind="show" identifier="toMain" id="czA-Ew-zr1"/>
                     </connections>
                 </viewController>
@@ -62,6 +62,9 @@
                         <color key="backgroundColor" red="0.87837939129999998" green="0.93666740920000002" blue="0.9854306115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="t7C-zk-RcL"/>
                     </view>
+                    <connections>
+                        <segue destination="hgQ-zo-GPd" kind="show" identifier="toRegisterDevice" id="67z-To-hly"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xzA-cM-6nL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -100,6 +103,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YEs-NK-uSp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="246" y="946"/>
+        </scene>
+        <!--Register Device View Controller-->
+        <scene sceneID="WYK-TQ-iSh">
+            <objects>
+                <viewController id="hgQ-zo-GPd" customClass="RegisterDeviceViewController" customModule="Aquatic_Saver" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O2f-Sa-gd0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.87837939129999998" green="0.93666740920000002" blue="0.9854306115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="G31-IN-ixt"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n7n-x8-u08" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1073" y="946"/>
         </scene>
     </scenes>
 </document>

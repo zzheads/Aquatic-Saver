@@ -10,8 +10,9 @@ import UIKit
 
 class Router {
     enum SegueID: String {
-        case toRegister
+        case toRegisterUser
         case toSettings
         case toMain
+        case toRegisterDevice
     }
 }

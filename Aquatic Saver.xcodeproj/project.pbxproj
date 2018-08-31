@@ -46,6 +46,9 @@
 		A67003A52139584400B0E718 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67003A42139584400B0E718 /* MainViewController.swift */; };
 		A67003A9213992BA00B0E718 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67003A8213992BA00B0E718 /* Device.swift */; };
 		A67003AB2139930700B0E718 /* DeviceAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67003AA2139930700B0E718 /* DeviceAttributes.swift */; };
+		A6D452D52139C2FF00387923 /* RegisterDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D452D42139C2FF00387923 /* RegisterDeviceViewController.swift */; };
+		A6D452D82139C64B00387923 /* DeviceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6D452D72139C64B00387923 /* DeviceCell.xib */; };
+		A6D452DA2139C7AC00387923 /* DeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D452D92139C7AC00387923 /* DeviceCell.swift */; };
 		A6DC7E6B2136A3DB00BB7552 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DC7E6A2136A3DB00BB7552 /* Setting.swift */; };
 		A6DC7E6D2136A97500BB7552 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DC7E6C2136A97500BB7552 /* JSON.swift */; };
 /* End PBXBuildFile section */
@@ -93,6 +96,9 @@
 		A67003A42139584400B0E718 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A67003A8213992BA00B0E718 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		A67003AA2139930700B0E718 /* DeviceAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceAttributes.swift; sourceTree = "<group>"; };
+		A6D452D42139C2FF00387923 /* RegisterDeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDeviceViewController.swift; sourceTree = "<group>"; };
+		A6D452D72139C64B00387923 /* DeviceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceCell.xib; sourceTree = "<group>"; };
+		A6D452D92139C7AC00387923 /* DeviceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCell.swift; sourceTree = "<group>"; };
 		A6DC7E6A2136A3DB00BB7552 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		A6DC7E6C2136A97500BB7552 /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		FA58BD56942DFC47B4C1A9BC /* Pods-Aquatic Saver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aquatic Saver.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Aquatic Saver/Pods-Aquatic Saver.debug.xcconfig"; sourceTree = "<group>"; };
@@ -160,6 +166,7 @@
 		A6344A7F213449EC0064AABB /* Aquatic Saver */ = {
 			isa = PBXGroup;
 			children = (
+				A6344A9521344B710064AABB /* View */,
 				A6344A9621344B990064AABB /* Model */,
 				A6344A9421344B5D0064AABB /* Helpers */,
 				A6344A9A21347B4B0064AABB /* Resources */,
@@ -233,6 +240,7 @@
 				A61CBE5421357D5200A9AF55 /* RegisterViewController.swift */,
 				A62B449A2136B3D90083D8EF /* SettingsViewController.swift */,
 				A67003A42139584400B0E718 /* MainViewController.swift */,
+				A6D452D42139C2FF00387923 /* RegisterDeviceViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -242,7 +250,6 @@
 			children = (
 				A670039021390B7B00B0E718 /* WebService.swift */,
 				A67003A0213920B500B0E718 /* APIClient.swift */,
-				A6344A9521344B710064AABB /* View */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -263,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				A670039E21391F7800B0E718 /* ConfigurableCell.swift */,
+				A6D452D62139C62800387923 /* DeviceCell */,
 				A62B44A12136E3BB0083D8EF /* BoolCell */,
 				A62B449E2136B7100083D8EF /* SettingCell */,
 			);
@@ -304,6 +312,15 @@
 				A670038C21390A8200B0E718 /* Server.swift */,
 			);
 			path = Server;
+			sourceTree = "<group>";
+		};
+		A6D452D62139C62800387923 /* DeviceCell */ = {
+			isa = PBXGroup;
+			children = (
+				A6D452D72139C64B00387923 /* DeviceCell.xib */,
+				A6D452D92139C7AC00387923 /* DeviceCell.swift */,
+			);
+			path = DeviceCell;
 			sourceTree = "<group>";
 		};
 		BE34C6C9537D1B4E7A38FDAE /* Frameworks */ = {
@@ -389,6 +406,7 @@
 				A62B44A32136E3DE0083D8EF /* BoolCell.xib in Resources */,
 				A62B449D2136B64C0083D8EF /* StringCell.xib in Resources */,
 				A6344AB82134836A0064AABB /* RobotoCondensed-Italic.ttf in Resources */,
+				A6D452D82139C64B00387923 /* DeviceCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +483,7 @@
 				A670038D21390A8200B0E718 /* Server.swift in Sources */,
 				A670039321390BF500B0E718 /* Resource.swift in Sources */,
 				A6344A83213449EC0064AABB /* LoginViewController.swift in Sources */,
+				A6D452DA2139C7AC00387923 /* DeviceCell.swift in Sources */,
 				A670039F21391F7800B0E718 /* ConfigurableCell.swift in Sources */,
 				A670038B2139088800B0E718 /* Extensible.swift in Sources */,
 				A67003A1213920B500B0E718 /* APIClient.swift in Sources */,
@@ -475,6 +494,7 @@
 				A61CBE5721357F1300A9AF55 /* Router.swift in Sources */,
 				A61CBE592135C01100A9AF55 /* UserDefaults +.swift in Sources */,
 				A6DC7E6B2136A3DB00BB7552 /* Setting.swift in Sources */,
+				A6D452D52139C2FF00387923 /* RegisterDeviceViewController.swift in Sources */,
 				A6344A81213449EC0064AABB /* AppDelegate.swift in Sources */,
 				A62B44A52136E48D0083D8EF /* BoolCell.swift in Sources */,
 				A67003A52139584400B0E718 /* MainViewController.swift in Sources */,
