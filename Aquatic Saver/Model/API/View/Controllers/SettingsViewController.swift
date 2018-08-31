@@ -66,14 +66,13 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let setting = self.settings[indexPath.row]
-        if setting.cellType == .bool {
-            let cell = tableView.dequeueReusableCell(withIdentifier: BoolCell.identifier, for: indexPath) as! BoolCell
-            cell.configure(with: setting)
-            return cell
-        } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: StringCell.identifier, for: indexPath) as! StringCell
-            cell.configure(with: setting)
-            return cell
+        print(setting.cellType.identifier)
+        let cell = tableView.dequeueReusableCell(withIdentifier: setting.cellType.identifier, for: indexPath) as! SettingConfigurableCell
+        cell.configure(with: setting) { setting in
+            if let setting = setting {
+                print("Value changed: \(setting.getValue())")
+            }
         }
+        return cell as! UITableViewCell
     }
 }

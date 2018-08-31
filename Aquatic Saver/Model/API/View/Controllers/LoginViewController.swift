@@ -8,6 +8,7 @@
 
 import UIKit
 import Material
+import PromiseKit
 
 class LoginViewController: UIElements.ViewController, DefaultsLoadable {
     let store = UserDefaults.store
@@ -50,6 +51,11 @@ extension LoginViewController {
     
     @objc func loginPressed(_ sender: FlatButton) {
         guard let email = self.emailField.text, let password = self.passwordField.text, !email.isEmpty, !password.isEmpty else { return }
+        APIClient.default.login(email: email, password: password)
+            .done { _ in
+                self.performSegue(withIdentifier: Router.SegueID.toMain.rawValue, sender: self)
+            }
+            .catch{ print($0) }
     }
     
     @objc func rememberMeChanged(_ sender: CheckButton) {

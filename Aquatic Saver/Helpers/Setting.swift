@@ -16,9 +16,16 @@ protocol SettingType {
     func setValue(_ value: Any)
 }
 
-enum SettingCellType {
+enum SettingCellType: String {
     case string
     case bool
+    
+    var identifier: String {
+        switch self {
+        case .bool      : return "\(BoolCell.self)"
+        case .string    : return "\(StringCell.self)"
+        }
+    }
 }
 
 class Setting<T: Codable & CustomStringConvertible>: SettingType {
