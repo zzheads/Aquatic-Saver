@@ -30,7 +30,8 @@ extension RegisterDeviceViewController {
     @objc func registerPressed(_ sender: RaisedButton) {
         guard let imei = self.imeiField.text, let number = self.numberField.text, let name = self.nameField.text, !imei.isEmpty, !number.isEmpty, !name.isEmpty else { return }
         APIClient.default.addDevice(imei: imei, phone: number, name: name)
-            .done { self.showAlert(title: "Device added", message: "\($0.toJSON)", style: .alert) }
-            .catch { self.showAlert(title: "Adding device error", message: $0.localizedDescription, style: .alert)}
+            .done { self.showAlert(title: "Device added", message: "\($0)", style: .alert) { self.navigationController?.popViewController(animated: true) }
+            }
+            .catch { self.showAlert(title: "Adding device error", message: $0.localizedDescription, style: .alert) }
     }
 }

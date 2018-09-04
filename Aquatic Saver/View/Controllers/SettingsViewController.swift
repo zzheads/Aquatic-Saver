@@ -9,23 +9,21 @@
 import UIKit
 
 class SettingsViewController: UIElements.ViewController {
+    lazy var dataSource: DataSource<SettingType, SettingTypeCell> = {
+        return DataSource<SettingType, SettingTypeCell>(Settings.shared) { setting in
+            Settings.shared.update(setting)
+        }
+    }()
+    
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(StringCell.nib, forCellReuseIdentifier: StringCell.identifier)
-        tableView.register(BoolCell.nib, forCellReuseIdentifier: BoolCell.identifier)
+        tableView.register(SettingTypeCell.nib, forCellReuseIdentifier: SettingTypeCell.identifier)
         tableView.rowHeight = 40
-        tableView.dataSource = self
+        tableView.dataSource = self.dataSource
         tableView.backgroundColor = .clear
         return tableView
     }()
-    
-    let settings: [SettingType] = [
-        Setting(key: "Server address", value: "132.197.0.34:8080"),
-        Setting(key: "Maximum connections", value: 10),
-        Setting(key: "Remember password", value: true),
-        Setting(key: "Supported devices", value: ["KVZ-612", "KVZ-302", "KVZ-111"])
-    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,29 +48,6 @@ class SettingsViewController: UIElements.ViewController {
     }
     
     @objc func saveSettings() {
-        print("Settings saved")
         self.navigationController?.popViewController(animated: true)
-    }
-}
-
-extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.settings.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let setting = self.settings[indexPath.row]
-        print(setting.cellType.identifier)
-        let cell = tableView.dequeueReusableCell(withIdentifier: setting.cellType.identifier, for: indexPath) as! SettingConfigurableCell
-        cell.configure(with: setting) { setting in
-            if let setting = setting {
-                print("Value changed: \(setting.getValue())")
-            }
-        }
-        return cell as! UITableViewCell
     }
 }

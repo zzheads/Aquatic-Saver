@@ -9,29 +9,13 @@
 import UIKit
 
 extension UIViewController {
-    func showAlert(title: String, message: String, style: UIAlertControllerStyle) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alertController.addAction(okAction)
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
-    func showAlertAndRun(title: String, message: String, style: UIAlertControllerStyle, completion: (() -> Void)?) {
+    func showAlert(title: String, message: String, style: UIAlertControllerStyle, completion: (() -> Void)? = nil) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
         let okAction = UIAlertAction(title: "OK", style: .default) { action in
             guard let completion = completion else {
                 return
             }
             completion()
-        }
-        alertController.addAction(okAction)
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
-    func showAlertAndDismiss(title: String, message: String, style: UIAlertControllerStyle) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
-        let okAction = UIAlertAction(title: "OK", style: .default) { action in
-            self.dismiss(animated: true, completion: nil)
         }
         alertController.addAction(okAction)
         self.present(alertController, animated: true, completion: nil)

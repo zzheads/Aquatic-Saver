@@ -8,9 +8,18 @@
 
 import UIKit
 
-protocol ConfigurableCell {
-    associatedtype Object
+public protocol ConfigurableCell {
     static var identifier   : String { get }
     static var nib          : UINib { get }
-    func configure(with object: Object, modify: ((Object) -> Void)?)
+    
+    associatedtype ItemType
+    
+    func configure(with item: ItemType, modify: ((ItemType?) -> Void)?)
 }
+
+public extension ConfigurableCell {
+    public static var identifier: String { return String(describing: Self.self) }
+    public static var nib       : UINib { return UINib(nibName: identifier, bundle: nil) }
+}
+
+

@@ -9,9 +9,6 @@
 import UIKit
 
 class DeviceCell: UITableViewCell, ConfigurableCell {
-    static let identifier = "\(DeviceCell.self)"
-    static let nib = UINib(nibName: identifier, bundle: nil)
-
     @IBOutlet weak var deviceView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var modelLabel: UILabel!
@@ -19,26 +16,26 @@ class DeviceCell: UITableViewCell, ConfigurableCell {
     var device: Device?
     var modify: ((Device) -> Void)?
     
-    func configure(with object: Device, modify: ((Device) -> Void)?) {
-        dump(object)
-        self.device = object
+    func configure(with item: Device, modify: ((Device?) -> Void)?) {
+        dump(item)
+        self.device = item
         self.modify = modify
-        if let data = object.photo {
+        if let data = item.photo {
             self.deviceView.image = UIImage(data: data)
         } else {
             self.deviceView.image = #imageLiteral(resourceName: "device")
         }
-        if let name = object.name {
-            if let uniqueId = object.uniqueId {
+        if let name = item.name {
+            if let uniqueId = item.uniqueId {
                 self.nameLabel.text = "\(name) (\(uniqueId))"
             } else {
                 self.nameLabel.text = name
             }
         }
-        if let model = object.model {
+        if let model = item.model {
             self.modelLabel.text = model
         }
-        if let battery = object.attributes?.battery {
+        if let battery = item.attributes?.battery {
             self.batteryLabel.text = "\(battery)"
         } else {
             self.batteryLabel.text = "n/a"
