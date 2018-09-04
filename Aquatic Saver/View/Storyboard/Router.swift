@@ -14,5 +14,6 @@ class Router {
         case toSettings
         case toMain
         case toRegisterDevice
+        case toMap
     }
 }

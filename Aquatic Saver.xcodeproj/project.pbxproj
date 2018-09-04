@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		530CDC8C8D4A48EEAAA43D23 /* Pods_Aquatic_Saver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8515D166891310D1ED4D7E95 /* Pods_Aquatic_Saver.framework */; };
+		A608E2E3213C575F003D2C23 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = A608E2E2213C575F003D2C23 /* Command.swift */; };
+		A608E2E5213C5783003D2C23 /* CommandType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A608E2E4213C5783003D2C23 /* CommandType.swift */; };
+		A608E2E7213C57A5003D2C23 /* CommandAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A608E2E6213C57A5003D2C23 /* CommandAttributes.swift */; };
+		A608E2EA213C595E003D2C23 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = A608E2E9213C595E003D2C23 /* Contact.swift */; };
+		A608E2F0213C5BAD003D2C23 /* Character + Int + String +.swift in Sources */ = {isa = PBXBuildFile; fileRef = A608E2EF213C5BAD003D2C23 /* Character + Int + String +.swift */; };
 		A61CBE5121356A2F00A9AF55 /* UIElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61CBE5021356A2F00A9AF55 /* UIElements.swift */; };
 		A61CBE5521357D5200A9AF55 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61CBE5421357D5200A9AF55 /* RegisterViewController.swift */; };
 		A61CBE5721357F1300A9AF55 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61CBE5621357F1300A9AF55 /* Router.swift */; };
@@ -46,6 +51,8 @@
 		A67003A52139584400B0E718 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67003A42139584400B0E718 /* MainViewController.swift */; };
 		A67003A9213992BA00B0E718 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67003A8213992BA00B0E718 /* Device.swift */; };
 		A67003AB2139930700B0E718 /* DeviceAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67003AA2139930700B0E718 /* DeviceAttributes.swift */; };
+		A6B6CB91213E7AFC003E4BBC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B6CB90213E7AFC003E4BBC /* MapViewController.swift */; };
+		A6B6CB93213E8CC9003E4BBC /* UIViewController +.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B6CB92213E8CC9003E4BBC /* UIViewController +.swift */; };
 		A6D452D52139C2FF00387923 /* RegisterDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D452D42139C2FF00387923 /* RegisterDeviceViewController.swift */; };
 		A6D452D82139C64B00387923 /* DeviceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6D452D72139C64B00387923 /* DeviceCell.xib */; };
 		A6D452DA2139C7AC00387923 /* DeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D452D92139C7AC00387923 /* DeviceCell.swift */; };
@@ -56,6 +63,11 @@
 /* Begin PBXFileReference section */
 		53BD77F7A13C404A49765885 /* Pods-Aquatic Saver.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aquatic Saver.release.xcconfig"; path = "Pods/Target Support Files/Pods-Aquatic Saver/Pods-Aquatic Saver.release.xcconfig"; sourceTree = "<group>"; };
 		8515D166891310D1ED4D7E95 /* Pods_Aquatic_Saver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Aquatic_Saver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A608E2E2213C575F003D2C23 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
+		A608E2E4213C5783003D2C23 /* CommandType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandType.swift; sourceTree = "<group>"; };
+		A608E2E6213C57A5003D2C23 /* CommandAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandAttributes.swift; sourceTree = "<group>"; };
+		A608E2E9213C595E003D2C23 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		A608E2EF213C5BAD003D2C23 /* Character + Int + String +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Character + Int + String +.swift"; sourceTree = "<group>"; };
 		A61CBE5021356A2F00A9AF55 /* UIElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIElements.swift; sourceTree = "<group>"; };
 		A61CBE5421357D5200A9AF55 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		A61CBE5621357F1300A9AF55 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -96,6 +108,8 @@
 		A67003A42139584400B0E718 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A67003A8213992BA00B0E718 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		A67003AA2139930700B0E718 /* DeviceAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceAttributes.swift; sourceTree = "<group>"; };
+		A6B6CB90213E7AFC003E4BBC /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = "Aquatic Saver/View/MapViewController.swift"; sourceTree = SOURCE_ROOT; };
+		A6B6CB92213E8CC9003E4BBC /* UIViewController +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController +.swift"; sourceTree = "<group>"; };
 		A6D452D42139C2FF00387923 /* RegisterDeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDeviceViewController.swift; sourceTree = "<group>"; };
 		A6D452D72139C64B00387923 /* DeviceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceCell.xib; sourceTree = "<group>"; };
 		A6D452D92139C7AC00387923 /* DeviceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCell.swift; sourceTree = "<group>"; };
@@ -123,6 +137,24 @@
 				53BD77F7A13C404A49765885 /* Pods-Aquatic Saver.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		A608E2E1213C574E003D2C23 /* Command */ = {
+			isa = PBXGroup;
+			children = (
+				A608E2E2213C575F003D2C23 /* Command.swift */,
+				A608E2E4213C5783003D2C23 /* CommandType.swift */,
+				A608E2E6213C57A5003D2C23 /* CommandAttributes.swift */,
+			);
+			path = Command;
+			sourceTree = "<group>";
+		};
+		A608E2E8213C594D003D2C23 /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				A608E2E9213C595E003D2C23 /* Contact.swift */,
+			);
+			path = Contact;
 			sourceTree = "<group>";
 		};
 		A62B449E2136B7100083D8EF /* SettingCell */ = {
@@ -182,6 +214,8 @@
 				A6DC7E6A2136A3DB00BB7552 /* Setting.swift */,
 				A6DC7E6C2136A97500BB7552 /* JSON.swift */,
 				A6344A89213449EC0064AABB /* LaunchScreen.storyboard */,
+				A608E2EF213C5BAD003D2C23 /* Character + Int + String +.swift */,
+				A6B6CB92213E8CC9003E4BBC /* UIViewController +.swift */,
 				A6344A8C213449EC0064AABB /* Info.plist */,
 			);
 			path = Helpers;
@@ -241,6 +275,7 @@
 				A62B449A2136B3D90083D8EF /* SettingsViewController.swift */,
 				A67003A42139584400B0E718 /* MainViewController.swift */,
 				A6D452D42139C2FF00387923 /* RegisterDeviceViewController.swift */,
+				A6B6CB90213E7AFC003E4BBC /* MapViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -257,6 +292,8 @@
 		A670038F21390B6300B0E718 /* Traccar */ = {
 			isa = PBXGroup;
 			children = (
+				A608E2E8213C594D003D2C23 /* Contact */,
+				A608E2E1213C574E003D2C23 /* Command */,
 				A67003AC213993E000B0E718 /* Server */,
 				A67003A7213992AE00B0E718 /* Device */,
 				A67003A6213992A000B0E718 /* User */,
@@ -483,6 +520,7 @@
 				A670038D21390A8200B0E718 /* Server.swift in Sources */,
 				A670039321390BF500B0E718 /* Resource.swift in Sources */,
 				A6344A83213449EC0064AABB /* LoginViewController.swift in Sources */,
+				A608E2E5213C5783003D2C23 /* CommandType.swift in Sources */,
 				A6D452DA2139C7AC00387923 /* DeviceCell.swift in Sources */,
 				A670039F21391F7800B0E718 /* ConfigurableCell.swift in Sources */,
 				A670038B2139088800B0E718 /* Extensible.swift in Sources */,
@@ -495,12 +533,17 @@
 				A61CBE592135C01100A9AF55 /* UserDefaults +.swift in Sources */,
 				A6DC7E6B2136A3DB00BB7552 /* Setting.swift in Sources */,
 				A6D452D52139C2FF00387923 /* RegisterDeviceViewController.swift in Sources */,
+				A608E2E7213C57A5003D2C23 /* CommandAttributes.swift in Sources */,
 				A6344A81213449EC0064AABB /* AppDelegate.swift in Sources */,
 				A62B44A52136E48D0083D8EF /* BoolCell.swift in Sources */,
 				A67003A52139584400B0E718 /* MainViewController.swift in Sources */,
+				A608E2EA213C595E003D2C23 /* Contact.swift in Sources */,
 				A61CBE5521357D5200A9AF55 /* RegisterViewController.swift in Sources */,
+				A6B6CB93213E8CC9003E4BBC /* UIViewController +.swift in Sources */,
+				A608E2E3213C575F003D2C23 /* Command.swift in Sources */,
 				A6DC7E6D2136A97500BB7552 /* JSON.swift in Sources */,
 				A67003AB2139930700B0E718 /* DeviceAttributes.swift in Sources */,
+				A608E2F0213C5BAD003D2C23 /* Character + Int + String +.swift in Sources */,
 				A67003972139121F00B0E718 /* User.swift in Sources */,
 				A62B44A02136B7230083D8EF /* StringCell.swift in Sources */,
 				A67003992139127B00B0E718 /* NotificationsSettings.swift in Sources */,
@@ -508,6 +551,7 @@
 				A6700389213907DD00B0E718 /* Attributes.swift in Sources */,
 				A62B449B2136B3D90083D8EF /* SettingsViewController.swift in Sources */,
 				A67003A9213992BA00B0E718 /* Device.swift in Sources */,
+				A6B6CB91213E7AFC003E4BBC /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -660,7 +704,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Ergovit.Aquatic-Saver";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzheads.AquaticSaver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -680,7 +724,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Ergovit.Aquatic-Saver";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzheads.AquaticSaver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;

@@ -6,7 +6,7 @@
 //  Copyright © 2018 Алексей Папин. All rights reserved.
 //
 
-import Foundation
+import Alamofire
 
 class Device: Codable {
     var id              : Int?
@@ -35,5 +35,9 @@ extension Device {
     
     static func getBy(id: Int) -> Resource<Device> {
         return Resource(endpoint: "devices/\(id)", method: .get)
+    }
+    
+    static func add(imei: String, phone: String, name: String) -> Resource<Device> {
+        return Resource(endpoint: "devices", method: .post, parameters: ["uniqueId": imei, "phone": phone, "name": name], encoding: JSONEncoding.default)
     }
 }

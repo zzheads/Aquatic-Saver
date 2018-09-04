@@ -46,4 +46,12 @@ final class APIClient {
                 .catch { resolver.reject($0) }
         }
     }
+    
+    func addDevice(imei: String, phone: String, name: String) -> Promise<Device> {
+        return Promise<Device>() { resolver in
+            self.webService.fetchObject(resource: Device.add(imei: imei, phone: phone, name: name))
+                .done { resolver.fulfill($0) }
+                .catch { resolver.reject($0) }
+        }
+    }
 }

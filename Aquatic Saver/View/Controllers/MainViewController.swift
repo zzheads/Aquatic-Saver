@@ -15,6 +15,7 @@ class MainViewController: UIElements.ViewController {
         tableView.register(DeviceCell.nib, forCellReuseIdentifier: DeviceCell.identifier)
         tableView.rowHeight = 40
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.backgroundColor = .clear
         return tableView
     }()
@@ -66,6 +67,11 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: DeviceCell.identifier, for: indexPath) as! DeviceCell
         cell.configure(with: self.devices[indexPath.row], modify: nil)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let device = self.devices[indexPath.row]
+        self.performSegue(withIdentifier: Router.SegueID.toMap.rawValue, sender: self)
     }
 }
 
