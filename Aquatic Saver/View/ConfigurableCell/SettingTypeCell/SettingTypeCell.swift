@@ -20,23 +20,14 @@ class SettingTypeCell: UITableViewCell, ConfigurableCell {
         self.setting = item
         self.modify = modify
         self.keyLabel.text = item.key
+        self.valueSwitch.addTarget(self, action: #selector(self.switchChanged(_:)), for: .valueChanged)
+        if item.type == .bool { self.valueLabel.removeFromSuperview() } else { self.valueSwitch.removeFromSuperview() }
         switch item.type {
-        case .bool      :
-            self.valueLabel.removeFromSuperview()
-            self.valueSwitch.isOn = item.getValue() as! Bool
-            self.valueSwitch.addTarget(self, action: #selector(self.switchChanged(_:)), for: .valueChanged)
-        case .string    :
-            self.valueSwitch.removeFromSuperview()
-            self.valueLabel.text = item.getValue() as? String
-        case .int       :
-            self.valueSwitch.removeFromSuperview()
-            self.valueLabel.text = "\(item.getValue() as! Int)"
-        case .double    :
-            self.valueSwitch.removeFromSuperview()
-            self.valueLabel.text = "\(item.getValue() as! Double)"
-        case .array     :
-            self.valueSwitch.removeFromSuperview()
-            self.valueLabel.text = "\(item.getValue() as! [String])"
+        case .bool      : self.valueSwitch.isOn = item.getValue() as! Bool
+        case .string    : self.valueLabel.text = item.getValue() as? String
+        case .int       : self.valueLabel.text = "\(item.getValue() as! Int)"
+        case .double    : self.valueLabel.text = "\(item.getValue() as! Double)"
+        case .array     : self.valueLabel.text = "\(item.getValue() as! [String])"
         }
     }
     

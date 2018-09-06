@@ -49,6 +49,10 @@
 		A67003A52139584400B0E718 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67003A42139584400B0E718 /* MainViewController.swift */; };
 		A67003A9213992BA00B0E718 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67003A8213992BA00B0E718 /* Device.swift */; };
 		A67003AB2139930700B0E718 /* DeviceAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67003AA2139930700B0E718 /* DeviceAttributes.swift */; };
+		A6A7662721416C4E00F9459C /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A7662621416C4E00F9459C /* Position.swift */; };
+		A6A7662921416CC600F9459C /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A7662821416CC600F9459C /* Network.swift */; };
+		A6A7662B21416CDD00F9459C /* CellTower.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A7662A21416CDD00F9459C /* CellTower.swift */; };
+		A6A7662D21416D0000F9459C /* WiFiAccessPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A7662C21416D0000F9459C /* WiFiAccessPoint.swift */; };
 		A6B6CB91213E7AFC003E4BBC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B6CB90213E7AFC003E4BBC /* MapViewController.swift */; };
 		A6B6CB93213E8CC9003E4BBC /* UIViewController +.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B6CB92213E8CC9003E4BBC /* UIViewController +.swift */; };
 		A6B6CB95213EAD40003E4BBC /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B6CB94213EAD40003E4BBC /* DataSource.swift */; };
@@ -105,6 +109,10 @@
 		A67003A42139584400B0E718 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A67003A8213992BA00B0E718 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		A67003AA2139930700B0E718 /* DeviceAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceAttributes.swift; sourceTree = "<group>"; };
+		A6A7662621416C4E00F9459C /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
+		A6A7662821416CC600F9459C /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		A6A7662A21416CDD00F9459C /* CellTower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTower.swift; sourceTree = "<group>"; };
+		A6A7662C21416D0000F9459C /* WiFiAccessPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiAccessPoint.swift; sourceTree = "<group>"; };
 		A6B6CB90213E7AFC003E4BBC /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = "Aquatic Saver/View/MapViewController.swift"; sourceTree = SOURCE_ROOT; };
 		A6B6CB92213E8CC9003E4BBC /* UIViewController +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController +.swift"; sourceTree = "<group>"; };
 		A6B6CB94213EAD40003E4BBC /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
@@ -281,6 +289,7 @@
 		A670038F21390B6300B0E718 /* Traccar */ = {
 			isa = PBXGroup;
 			children = (
+				A6A7662521416C3D00F9459C /* Position */,
 				A608E2E8213C594D003D2C23 /* Contact */,
 				A608E2E1213C574E003D2C23 /* Command */,
 				A67003AC213993E000B0E718 /* Server */,
@@ -338,6 +347,17 @@
 				A670038C21390A8200B0E718 /* Server.swift */,
 			);
 			path = Server;
+			sourceTree = "<group>";
+		};
+		A6A7662521416C3D00F9459C /* Position */ = {
+			isa = PBXGroup;
+			children = (
+				A6A7662621416C4E00F9459C /* Position.swift */,
+				A6A7662821416CC600F9459C /* Network.swift */,
+				A6A7662A21416CDD00F9459C /* CellTower.swift */,
+				A6A7662C21416D0000F9459C /* WiFiAccessPoint.swift */,
+			);
+			path = Position;
 			sourceTree = "<group>";
 		};
 		A6D452D62139C62800387923 /* DeviceCell */ = {
@@ -505,6 +525,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6A7662921416CC600F9459C /* Network.swift in Sources */,
 				A670038D21390A8200B0E718 /* Server.swift in Sources */,
 				A670039321390BF500B0E718 /* Resource.swift in Sources */,
 				A6344A83213449EC0064AABB /* LoginViewController.swift in Sources */,
@@ -521,6 +542,7 @@
 				A61CBE592135C01100A9AF55 /* UserDefaults +.swift in Sources */,
 				A6DC7E6B2136A3DB00BB7552 /* Setting.swift in Sources */,
 				A6D452D52139C2FF00387923 /* RegisterDeviceViewController.swift in Sources */,
+				A6A7662B21416CDD00F9459C /* CellTower.swift in Sources */,
 				A608E2E7213C57A5003D2C23 /* CommandAttributes.swift in Sources */,
 				A6344A81213449EC0064AABB /* AppDelegate.swift in Sources */,
 				A67003A52139584400B0E718 /* MainViewController.swift in Sources */,
@@ -531,8 +553,10 @@
 				A6DC7E6D2136A97500BB7552 /* JSON.swift in Sources */,
 				A67003AB2139930700B0E718 /* DeviceAttributes.swift in Sources */,
 				A608E2F0213C5BAD003D2C23 /* Character + Int + String +.swift in Sources */,
+				A6A7662721416C4E00F9459C /* Position.swift in Sources */,
 				A67003972139121F00B0E718 /* User.swift in Sources */,
 				A62B44A02136B7230083D8EF /* SettingTypeCell.swift in Sources */,
+				A6A7662D21416D0000F9459C /* WiFiAccessPoint.swift in Sources */,
 				A67003992139127B00B0E718 /* NotificationsSettings.swift in Sources */,
 				A6B6CB95213EAD40003E4BBC /* DataSource.swift in Sources */,
 				A670039B213912A000B0E718 /* UserAttributes.swift in Sources */,

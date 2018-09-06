@@ -11,23 +11,33 @@ import GoogleMaps
 import MapKit
 
 class MapViewController: UIElements.ViewController {
-    
+    var device  : Device?
     var map     : GMSMapView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Create a GMSCameraPosition that tells the map to display the
-        // coordinate -33.86,151.20 at zoom level 6.
-        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
+
+        let longitude   : Double = -33.86
+        let latitude    : Double = 151.20
+
+        let camera = GMSCameraPosition.camera(withLatitude: longitude, longitude: latitude, zoom: 6.0)
         self.map = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         self.map?.animate(toZoom: 1.0)
         self.view = self.map
         
         let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
-        marker.title = "Sydney"
-        marker.snippet = "Australia"
+        marker.position = CLLocationCoordinate2D(latitude: longitude, longitude: latitude)
         marker.map = self.map
+        
+        APIClient.default.lastPosition()
+            .done { positions in
+                if let position = positions.last, let lat = position.latitude, let lon = position.longitude {
+                    marker.position = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+                    marker.title = position.onMapDescription
+                }
+                
+            }
+            .catch { self.showAlert(title: "Getting position error", message: $0.localizedDescription, style: .alert) }
+        
     }
 }

@@ -54,4 +54,12 @@ final class APIClient {
                 .catch { resolver.reject($0) }
         }
     }
+    
+    func lastPosition() -> Promise<[Position]> {
+        return Promise<[Position]>() { resolver in
+            self.webService.fetchArray(resource: Position.last())
+                .done { resolver.fulfill($0) }
+                .catch { resolver.reject($0) }
+        }
+    }
 }
