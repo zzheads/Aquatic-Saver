@@ -78,9 +78,48 @@
                     <view key="view" contentMode="scaleToFill" id="qMB-Gq-M3T">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnU-8t-MiL">
+                                <rect key="frame" x="319" y="611" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="8rB-Gs-Omf"/>
+                                    <constraint firstAttribute="height" constant="40" id="OeM-BR-MP2"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="icon_scale_minus"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbd-Ez-JGv">
+                                <rect key="frame" x="319" y="555" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="24t-ct-8pv"/>
+                                    <constraint firstAttribute="width" constant="40" id="N0S-Dm-W8d"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="icon_scale_plus"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbc-hJ-6Vu">
+                                <rect key="frame" x="321.5" y="504" width="35" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="35" id="fO7-m1-xAo"/>
+                                    <constraint firstAttribute="height" constant="35" id="wjD-V8-wwd"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="View-refresh_Gion_simple.svg"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.87837939129999998" green="0.93666740920000002" blue="0.9854306115" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cbd-Ez-JGv" firstAttribute="centerX" secondItem="tbc-hJ-6Vu" secondAttribute="centerX" id="3JF-7u-j9q"/>
+                            <constraint firstAttribute="trailing" secondItem="cbd-Ez-JGv" secondAttribute="trailing" constant="16" id="S5a-I0-zhc"/>
+                            <constraint firstAttribute="trailing" secondItem="fnU-8t-MiL" secondAttribute="trailing" constant="16" id="eQF-Oq-4vS"/>
+                            <constraint firstItem="fnU-8t-MiL" firstAttribute="top" secondItem="cbd-Ez-JGv" secondAttribute="bottom" constant="16" id="g8o-s1-1Wd"/>
+                            <constraint firstItem="cbd-Ez-JGv" firstAttribute="top" secondItem="tbc-hJ-6Vu" secondAttribute="bottom" constant="16" id="toZ-9Y-cRk"/>
+                            <constraint firstItem="xvd-WJ-KBg" firstAttribute="bottom" secondItem="fnU-8t-MiL" secondAttribute="bottom" constant="16" id="yoD-9z-Hny"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="xvd-WJ-KBg"/>
                     </view>
+                    <connections>
+                        <outlet property="btnMinus" destination="fnU-8t-MiL" id="3qr-yR-vay"/>
+                        <outlet property="btnPlus" destination="cbd-Ez-JGv" id="iEe-wF-3jK"/>
+                        <outlet property="btnRefresh" destination="tbc-hJ-6Vu" id="baM-3M-NyJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Suh-wv-aAG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -136,4 +175,9 @@
             <point key="canvasLocation" x="1073" y="946"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="View-refresh_Gion_simple.svg" width="500" height="488"/>
+        <image name="icon_scale_minus" width="55" height="55"/>
+        <image name="icon_scale_plus" width="55" height="55"/>
+    </resources>
 </document>

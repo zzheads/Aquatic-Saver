@@ -70,8 +70,15 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let device = self.devices[indexPath.row]
         self.performSegue(withIdentifier: Router.SegueID.toMap.rawValue, sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let segueId = segue.identifier else { return }
+        if segueId == Router.SegueID.toMap.rawValue, let selected = self.tableView.indexPathForSelectedRow {
+            let mapController = segue.destination as! MapViewController
+            mapController.device = self.devices[selected.row]
+        }
     }
 }
 

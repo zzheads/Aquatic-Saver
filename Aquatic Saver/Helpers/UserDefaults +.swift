@@ -23,21 +23,27 @@ extension UserDefaults {
         case email
         case password
         case rememberMe
+        case scale
     }
     
     var email: String? {
         get { return self.value(forKey: Keys.email.rawValue) as? String }
-        set { self.setValue(newValue, forKey: Keys.email.rawValue) }
+        set { self.set(newValue, forKey: Keys.email.rawValue) }
     }
 
     var password: String? {
         get { return self.value(forKey: Keys.password.rawValue) as? String }
-        set { self.setValue(newValue, forKey: Keys.password.rawValue) }
+        set { self.set(newValue, forKey: Keys.password.rawValue) }
     }
 
     var rememberMe: Bool? {
         get { return self.value(forKey: Keys.rememberMe.rawValue) as? Bool }
-        set { self.setValue(newValue, forKey: Keys.rememberMe.rawValue) }
+        set { self.set(newValue, forKey: Keys.rememberMe.rawValue) }
+    }
+    
+    var scale: Float? {
+        get { return self.value(forKey: Keys.scale.rawValue) as? Float }
+        set { self.set(newValue, forKey: Keys.scale.rawValue) }
     }
     
     func load(_ vc: DefaultsLoadable) {

@@ -33,8 +33,21 @@ struct Position: Codable {
 extension Position: Extensible {
     typealias Object = Position
     
-    static func last() -> Resource<Position> {
+    static var last: Resource<Position> {
         return Resource(endpoint: "positions", method: .get)
+    }
+    
+    static var all: Resource<Position> {
+        return Resource(endpoint: "positions?from=1999/01/01&to=2019/01/01", method: .get)
+    }
+
+    static func by(ids: [Int]) -> Resource<Position> {
+        let query = String(ids.flatMap{"id=\($0)&"}.dropLast())
+        return Resource(endpoint: "positions?\(query)", method: .get)
+    }
+    
+    static func ofDevice(deviceId: Int, from: String, to: String) -> Resource<Position> {
+        return Resource(endpoint: "positions?deviceId=\(deviceId)&from=\(from)&to=\(to)", method: .get)
     }
 }
 

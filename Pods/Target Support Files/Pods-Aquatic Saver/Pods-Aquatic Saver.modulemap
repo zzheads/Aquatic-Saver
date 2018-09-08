@@ -1,0 +1,6 @@
+framework module Pods_Aquatic_Saver {
+  umbrella header "Pods-Aquatic Saver-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -7,6 +7,7 @@
 //
 
 import Alamofire
+import GoogleMaps
 
 class Device: Codable {
     var id              : Int?
@@ -39,5 +40,29 @@ extension Device {
     
     static func add(imei: String, phone: String, name: String) -> Resource<Device> {
         return Resource(endpoint: "devices", method: .post, parameters: ["uniqueId": imei, "phone": phone, "name": name], encoding: JSONEncoding.default)
+    }
+}
+
+extension Device {
+    var onMapDescription: String {
+        var description = ""
+        if let phone = self.phone {
+            description += "номер: \(phone)\n"
+        }
+        if let model = self.model {
+            description += "модель: \(model)\n"
+        }
+        if let uniqueId = self.uniqueId {
+            description += "id: \(uniqueId)\n"
+        }
+        description = "\(String(description.dropLast(1)))"
+        return description
+    }
+    
+    func marker(at coordinate: CLLocationCoordinate2D) -> GMSMarker {
+        let marker = GMSMarker(position: coordinate)
+        marker.title = self.name
+        marker.snippet = self.onMapDescription
+        return marker
     }
 }

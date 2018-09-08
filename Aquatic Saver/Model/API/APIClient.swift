@@ -57,7 +57,39 @@ final class APIClient {
     
     func lastPosition() -> Promise<[Position]> {
         return Promise<[Position]>() { resolver in
-            self.webService.fetchArray(resource: Position.last())
+            self.webService.fetchArray(resource: Position.last)
+                .done { resolver.fulfill($0) }
+                .catch { resolver.reject($0) }
+        }
+    }
+    
+    func allPositions() -> Promise<[Position]> {
+        return Promise<[Position]>() { resolver in
+            self.webService.fetchArray(resource: Position.all)
+                .done { resolver.fulfill($0) }
+                .catch { resolver.reject($0) }
+        }
+    }
+
+    func positionsBy(ids: [Int]) -> Promise<[Position]> {
+        return Promise<[Position]>() { resolver in
+            self.webService.fetchArray(resource: Position.by(ids: ids))
+                .done { resolver.fulfill($0) }
+                .catch { resolver.reject($0) }
+        }
+    }
+    
+    func lastKnownPositionOf(_ deviceId: Int) -> Promise<Position?> {
+        return Promise<Position?>() { resolver in
+            self.positionsOf(deviceId)
+                .done { resolver.fulfill($0.filter{ $0.latitude != 0 || $0.longitude != 0}.last) }
+                .catch { resolver.reject($0) }
+        }
+    }
+    
+    func positionsOf(_ deviceId: Int, from: String = "2017-01-01", to: String = "2100-01-01") -> Promise<[Position]> {
+        return Promise<[Position]>() { resolver in
+            self.webService.fetchArray(resource: Position.ofDevice(deviceId: deviceId, from: from, to: to))
                 .done { resolver.fulfill($0) }
                 .catch { resolver.reject($0) }
         }
