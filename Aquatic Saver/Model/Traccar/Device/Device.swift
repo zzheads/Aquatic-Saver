@@ -46,6 +46,10 @@ extension Device {
         guard let id = device.id, let parameters = device.toJSON else { return nil }
         return Resource(endpoint: "devices/\(id)", method: .put, parameters: parameters, encoding: JSONEncoding.default)
     }
+    
+    static func delete(_ id: Int) -> Resource<Device?> {
+        return Resource(endpoint: "devices/\(id)", method: .delete)
+    }
 }
 
 extension Device {

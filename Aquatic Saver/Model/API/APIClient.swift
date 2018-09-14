@@ -46,6 +46,14 @@ final class APIClient {
         }
     }
     
+    func delete(id: Int) -> Promise<Device?> {
+        return Promise<Device?>() { resolver in
+            self.webService.fetchObject(resource: Device.delete(id))
+                .done { _ in resolver.fulfill(nil) }
+                .catch { resolver.reject($0) }
+        }
+    }
+    
     func allDevices() -> Promise<[Device]> {
         return Promise<[Device]>() { resolver in
             self.webService.fetchArray(resource: Device.getAll())
