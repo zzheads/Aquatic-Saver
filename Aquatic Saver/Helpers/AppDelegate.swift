@@ -8,14 +8,21 @@
 
 import UIKit
 import GoogleMaps
+import IQKeyboardManager
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    let googleMapsAPIKey = "AIzaSyCbWP5YpdXpeFyItQIgcHPV1mf93KynJLA"
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        return GMSServices.provideAPIKey("AIzaSyDIHNZUUeiUeA-Ll3njbI0bHczM8oIYsqE")
+
+        NotificationsManager.default.register(application: application)
+        SocketObserver.default.start()
+        IQKeyboardManager.shared().isEnabled = true
+        IQKeyboardManager.shared().keyboardDistanceFromTextField = 50
+        return GMSServices.provideAPIKey(self.googleMapsAPIKey)
     }
 }
 

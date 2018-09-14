@@ -12,9 +12,19 @@ import MapKit
 import Material
 
 class MapViewController: UIElements.ViewController {
-    var device  : Device?
-    var map     : GMSMapView?
-    var marker  : GMSMarker?
+    var device      : Device?
+    lazy var map    : GMSMapView = {
+        let latitude = 151.20
+        let longitude = -33.86
+        let scale = UserDefaults.store?.scale ?? 10.0
+        let camera = GMSCameraPosition.camera(withLatitude: latitude, longitude: longitude, zoom: scale)
+        let map = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        map.animate(toZoom: camera.zoom)
+        map.translatesAutoresizingMaskIntoConstraints = false
+        return map
+    }()
+    
+    var marker      : GMSMarker?
         
     @IBOutlet weak var btnPlus: UIButton!
     @IBOutlet weak var btnMinus: UIButton!
@@ -23,9 +33,6 @@ class MapViewController: UIElements.ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let map = self.map(nil)
-        self.map = map
-        self.marker = marker(nil)
         self.view.addSubview(map)
 
         NSLayoutConstraint.activate([
@@ -40,6 +47,7 @@ class MapViewController: UIElements.ViewController {
         self.btnRefresh.addTarget(self, action: #selector(self.updatePressed(_:)), for: .touchUpInside)
         
         self.view.sendSubview(toBack: map)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.gotObjects(_:)), name: AppNotification.socketObjectsName, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,21 +55,22 @@ class MapViewController: UIElements.ViewController {
         self.updatePressed()
     }
     
-    func map(_ position: Position?) -> GMSMapView {
-        let latitude = position?.latitude ?? 151.20
-        let longitude = position?.longitude ?? -33.86
-        let scale = UserDefaults.store?.scale ?? 10.0
-        
-        let camera = GMSCameraPosition.camera(withLatitude: latitude, longitude: longitude, zoom: scale)
-        let map = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        map.animate(toZoom: camera.zoom)
-        map.translatesAutoresizingMaskIntoConstraints = false
-        return map
+    @objc func gotObjects(_ notification: Notification) {
+        guard
+            let key = notification.userInfo?["key"] as? String,
+            let json = notification.userInfo?["json"] as? [JSON],
+            SocketObserver.WebSocketObject(rawValue: key) == .positions,
+            let positions = [Position](fromJSONArray: json)
+            else {
+                PushNotification(title: "WebSocket", message: "Got \(notification.userInfo ?? [:]), but can not use it.").push()
+                return
+        }
+        self.update(positions.last)
+        PushNotification(title: "WebSocket", message: "Device position updated").push()
     }
     
-    func marker(_ position: Position? = nil) -> GMSMarker {
-        let latitude = position?.latitude ?? 151.20
-        let longitude = position?.longitude ?? -33.86
+    func marker(_ position: Position? = nil) -> GMSMarker? {
+        guard let latitude = position?.latitude, let longitude = position?.longitude else { return nil }
         
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2D(latitude: longitude, longitude: latitude)
@@ -73,23 +82,32 @@ class MapViewController: UIElements.ViewController {
     }
     
     func update(_ position: Position? = nil) {
-        guard let map = self.map, let marker = self.marker, let latitude = position?.latitude, let longitude = position?.longitude else { return }
-        marker.position = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-        let updateCamera = GMSCameraUpdate.setTarget(marker.position, zoom: map.camera.zoom)
+        guard let latitude = position?.latitude, let longitude = position?.longitude else {
+            self.updateCamera()
+            return
+        }
+        if self.marker == nil {
+            self.marker = self.marker(position)
+        }
+        self.marker?.position = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+        self.updateCamera()
+    }
+    
+    func updateCamera() {
+        let position = self.marker?.position ?? CLLocationCoordinate2D(latitude: -33, longitude: 150)
+        let updateCamera = GMSCameraUpdate.setTarget(position, zoom: map.camera.zoom)
         map.moveCamera(updateCamera)
     }
 }
 
 extension MapViewController {
     @objc fileprivate func scalePlusPressed(_ sender: UIButton) {
-        guard let map = self.map else { return }
-        map.animate(toZoom: map.camera.zoom + 1.0)
+        self.map.animate(toZoom: map.camera.zoom + 1.0)
         UserDefaults.store?.scale = map.camera.zoom
     }
     
     @objc fileprivate func scaleMinusPressed(_ sender: UIButton) {
-        guard let map = self.map else { return }
-        map.animate(toZoom: map.camera.zoom - 1.0)
+        self.map.animate(toZoom: map.camera.zoom - 1.0)
         UserDefaults.store?.scale = map.camera.zoom
     }
     
@@ -97,7 +115,10 @@ extension MapViewController {
         guard let deviceId = self.device?.id else { return }
         sender?.isEnabled = false
         APIClient.default.lastKnownPositionOf(deviceId)
-            .done { self.update($0) }
+            .done { position in
+                self.toast(position == nil ? "No position data" : "Position updated", duration: 5.0, color: UIElements.Color.darkBlue)
+                self.update(position)
+            }
             .catch { self.showAlert(title: "Getting position error", message: $0.localizedDescription, style: .alert) }
             .finally { sender?.isEnabled = true }
     }

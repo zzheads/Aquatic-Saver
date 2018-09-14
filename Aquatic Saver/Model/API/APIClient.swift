@@ -36,6 +36,16 @@ final class APIClient {
         }
     }
     
+    func register(username: String, email: String, password: String) -> Promise<User> {
+        return Promise<User>() { resolver in
+            self.webService.fetchObject(resource: User.register(username: username, email: email, password: password))
+                .done { user in
+                    resolver.fulfill(user)
+                }
+                .catch { resolver.reject($0) }
+        }
+    }
+    
     func allDevices() -> Promise<[Device]> {
         return Promise<[Device]>() { resolver in
             self.webService.fetchArray(resource: Device.getAll())
@@ -50,6 +60,18 @@ final class APIClient {
     func addDevice(imei: String, phone: String, name: String) -> Promise<Device> {
         return Promise<Device>() { resolver in
             self.webService.fetchObject(resource: Device.add(imei: imei, phone: phone, name: name))
+                .done { resolver.fulfill($0) }
+                .catch { resolver.reject($0) }
+        }
+    }
+    
+    func update(device: Device) -> Promise<Device> {
+        return Promise<Device>() { resolver in
+            guard let resource = Device.update(device) else {
+                resolver.reject(AppError.nilResource(message: "Can not update device: \(device)").error)
+                return
+            }
+            self.webService.fetchObject(resource: resource)
                 .done { resolver.fulfill($0) }
                 .catch { resolver.reject($0) }
         }

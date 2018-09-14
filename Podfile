@@ -7,6 +7,8 @@ target 'Aquatic Saver' do
     pod 'GoogleMaps'
     pod 'PromiseKit', '~> 6.0'
     pod 'Material', '~> 2.0'
+    pod 'IQKeyboardManager'
+    pod 'Starscream', '~> 3.0.2'
 end
 
 post_install do |installer|

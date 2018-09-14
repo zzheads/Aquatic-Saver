@@ -18,6 +18,7 @@ public enum AppError: Error {
     case serialization(message: String)
     case api(error: Error, response: DataResponse<Any>)
     case transaction(message: String)
+    case nilResource(message: String)
     
     var title: String {
         var title = ""
@@ -28,6 +29,7 @@ public enum AppError: Error {
         case .serialization(_)              : title = "Serialization error"
         case .api(_, _)                     : title = "API Error"
         case .transaction(_)                : title = "Transaction error"
+        case .nilResource(_)                : title = "Resource is nil"
         }
         return title
     }
@@ -55,6 +57,7 @@ public enum AppError: Error {
         case .transaction(let msg)          : message = "Transaction error: \(msg)"
         case .badEmail                      : message = "Invalid email"
         case .badPassword                   : message = "Password and verify password are not equal"
+        case .nilResource(let msg)          : message = "Resource is nil: \(msg)"
         }
         return message
     }

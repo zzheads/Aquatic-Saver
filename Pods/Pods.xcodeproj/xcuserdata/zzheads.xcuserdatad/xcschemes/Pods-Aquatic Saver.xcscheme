@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "64BBB6479698397F503277AB72DE374E"
+               BlueprintIdentifier = "C800D07F05CE2AAC970466BF3A29C7AA"
                BuildableName = "Pods_Aquatic_Saver.framework"
                BlueprintName = "Pods-Aquatic Saver"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "64BBB6479698397F503277AB72DE374E"
+            BlueprintIdentifier = "C800D07F05CE2AAC970466BF3A29C7AA"
             BuildableName = "Pods_Aquatic_Saver.framework"
             BlueprintName = "Pods-Aquatic Saver"
             ReferencedContainer = "container:Pods.xcodeproj">

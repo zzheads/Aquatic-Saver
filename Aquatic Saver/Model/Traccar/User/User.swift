@@ -64,6 +64,10 @@ extension User {
     static func session(email: String, password: String) -> Resource<User> {
         return Resource(endpoint: "session", method: .post, parameters: ["email": email, "password": password], encoding: URLEncoding.httpBody, headers: nil)
     }
+    
+    static func register(username: String, email: String, password: String) -> Resource<User> {
+        return Resource(endpoint: "users", method: .post, parameters: ["name": username, "email": email, "password": password], encoding: JSONEncoding.default)
+    }
 }
 
 extension User: CustomStringConvertible {

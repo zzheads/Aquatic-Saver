@@ -10,20 +10,47 @@ import Foundation
 import Material
 
 struct UIElements {
-    struct AppColor {
+    struct Color {
         static let darkBlue = UIColor(red: 33/255, green: 80/255, blue: 113/255, alpha: 1.0)
         static let lightBlue = UIColor(red: 224/255, green: 239/255, blue: 251/255, alpha: 1.0)
     }
     
     struct Font {
+        static let fontFamilyName = "Rubik"
+        
+        enum FontStyle: String {
+            case regular
+            case medium
+            case light
+            case bold
+            
+            var styleName: String {
+                return self.rawValue.capitalized
+            }
+            
+            var fontName: String {
+                return "\(fontFamilyName)-\(self.styleName)"
+            }
+        }
+        static func font(style: FontStyle, size: CGFloat) -> UIFont? {
+            guard let font = UIFont(name: style.fontName, size: size) else {
+                print("Font \(style.fontName) not found.")
+                return nil
+            }
+            return font
+        }
+        
         static func regular(_ size: CGFloat) -> UIFont? {
-            return UIFont(name: "RobotoCondensed-Regular", size: size)
+            return font(style: .regular, size: size)
         }
         static func light(_ size: CGFloat) -> UIFont? {
-            return UIFont(name: "RobotoCondensed-Light", size: size)
+            return font(style: .light, size: size)
         }
         static func bold(_ size: CGFloat) -> UIFont? {
-            return UIFont(name: "RobotoCondensed-Bold", size: size)
+            return font(style: .bold, size: size)
+        }
+        static func medium(_ size: CGFloat) -> UIFont? {
+            return font(style: .medium, size: size)
         }
     }
     
@@ -39,7 +66,10 @@ struct UIElements {
         }
         
         class func setAttributes(for buttons: [UIBarButtonItem?]) {
-            guard let font = UIElements.Font.bold(12.0) else { return }
+            guard let font = UIElements.Font.bold(12.0) else {
+                print("Font not found")
+                return
+            }
             let attributes = [NSAttributedStringKey.font: font]
             buttons.forEach {
                 $0?.setTitleTextAttributes(attributes, for: .normal)
@@ -56,13 +86,13 @@ struct UIElements {
         }
     }
     
-    static func textField(_ placeholder: String? = nil, color: UIColor = AppColor.darkBlue, font: UIFont? = Font.regular(12.0), isPass: Bool = false) -> TextField {
+    static func textField(_ placeholder: String? = nil, color: UIColor = Color.darkBlue, font: UIFont? = Font.regular(12.0), isPass: Bool = false) -> TextField {
         let textField = TextField()
         textField.font = font
         textField.placeholder = placeholder
         textField.textColor = color
-        textField.dividerActiveColor = AppColor.darkBlue
-        textField.placeholderActiveColor = AppColor.darkBlue
+        textField.dividerActiveColor = Color.darkBlue
+        textField.placeholderActiveColor = Color.darkBlue
         textField.autocapitalizationType = .none
         if isPass {
             textField.isSecureTextEntry = true
@@ -73,25 +103,25 @@ struct UIElements {
         return textField
     }
     
-    static func raisedButton(_ title: String? = nil, titleColor: UIColor = .white, backColor: UIColor = AppColor.darkBlue, font: UIFont? = Font.bold(14.0)) -> RaisedButton {
+    static func raisedButton(_ title: String? = nil, titleColor: UIColor = .white, backColor: UIColor = Color.darkBlue, font: UIFont? = Font.bold(14.0)) -> RaisedButton {
         let button = RaisedButton(title: title, titleColor: titleColor)
         button.titleLabel?.font = font
         button.backgroundColor = backColor
         return button
     }
     
-    static func flatButton(_ title: String? = nil, titleColor: UIColor = AppColor.darkBlue, backColor: UIColor = .clear, font: UIFont? = Font.regular(12.0)) -> FlatButton {
+    static func flatButton(_ title: String? = nil, titleColor: UIColor = Color.darkBlue, backColor: UIColor = .clear, font: UIFont? = Font.regular(12.0)) -> FlatButton {
         let button = FlatButton(title: title, titleColor: titleColor)
         button.titleLabel?.font = font
         button.backgroundColor = backColor
         return button
     }
     
-    static func checkButton(_ title: String?, titleColor: UIColor = AppColor.darkBlue) -> CheckButton {
+    static func checkButton(_ title: String?, titleColor: UIColor = Color.darkBlue) -> CheckButton {
         let button = CheckButton(title: title, titleColor: titleColor)
         button.titleLabel?.font = Font.regular(12.0)
         button.checkmarkColor = .white
-        button.setIconColor(AppColor.darkBlue, for: .selected)
+        button.setIconColor(Color.darkBlue, for: .selected)
         button.iconSize = 12
         return button
     }

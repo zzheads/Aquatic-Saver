@@ -11,7 +11,7 @@ import GoogleMaps
 
 class Device: Codable {
     var id              : Int?
-    var attributes      : Attributes?
+    var attributes      : DeviceAttributes?
     var name            : String?
     var phone           : String?
     var uniqueId        : String?
@@ -40,6 +40,11 @@ extension Device {
     
     static func add(imei: String, phone: String, name: String) -> Resource<Device> {
         return Resource(endpoint: "devices", method: .post, parameters: ["uniqueId": imei, "phone": phone, "name": name], encoding: JSONEncoding.default)
+    }
+    
+    static func update(_ device: Device) -> Resource<Device>? {
+        guard let id = device.id, let parameters = device.toJSON else { return nil }
+        return Resource(endpoint: "devices/\(id)", method: .put, parameters: parameters, encoding: JSONEncoding.default)
     }
 }
 

@@ -27,10 +27,10 @@ class SettingsViewController: UIElements.ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        super.view.backgroundColor = UIElements.AppColor.lightBlue
+        super.view.backgroundColor = UIElements.Color.lightBlue
         self.view.addSubview(self.tableView)
         NSLayoutConstraint.activate([
-            self.tableView.topAnchor.constraint(equalTo: self.topLayoutGuide.topAnchor),
+            self.tableView.topAnchor.constraint(equalTo: self.view.topAnchor),
             self.tableView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
             self.tableView.rightAnchor.constraint(equalTo: self.view.rightAnchor),
             self.tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)

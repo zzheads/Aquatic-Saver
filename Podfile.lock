@@ -5,6 +5,7 @@ PODS:
   - GoogleMaps/Base (2.7.0)
   - GoogleMaps/Maps (2.7.0):
     - GoogleMaps/Base
+  - IQKeyboardManager (6.1.1)
   - Material (2.16.4):
     - Material/Core (= 2.16.4)
   - Material/Core (2.16.4):
@@ -21,28 +22,35 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (6.4.0):
     - PromiseKit/CorePromise
+  - Starscream (3.0.5)
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
   - GoogleMaps
+  - IQKeyboardManager
   - Material (~> 2.0)
   - PromiseKit (~> 6.0)
+  - Starscream (~> 3.0.2)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - GoogleMaps
+    - IQKeyboardManager
     - Material
     - Motion
     - PromiseKit
+    - Starscream
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
+  IQKeyboardManager: 79c57795f5c2408d259d37b9da2ed07efcbb5225
   Material: 4ed78690b09ffd148b5ffab6b4367fb1d8da1cd3
   Motion: 153ba49692997888556c7a95207278a8b1f8be95
   PromiseKit: ae3616f45d7bb9bf4ff1e91abc9b7a8c48a340e0
+  Starscream: faf918b2f2eff7d5dd21180646bf015a669673bd
 
-PODFILE CHECKSUM: 74c5cdac3509ab89a3f68c73dc3cb5fb7bf7204f
+PODFILE CHECKSUM: 57763343caa01547b5925d3b9569c8d3b588e616
 
 COCOAPODS: 1.5.3
