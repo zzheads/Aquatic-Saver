@@ -55,13 +55,24 @@ struct UIElements {
         }
     }
     
-    static let settingsImage = UIImage(named: "Settings2")
+    static let buttonSize: CGFloat = 25
+    static let settingsImage = #imageLiteral(resourceName: "Settings2").crop(toWidth: buttonSize, toHeight: buttonSize)
     
     class ViewController: UIViewController {
+        lazy var settingsButton: UIButton = {
+            let button = UIButton(type: UIButtonType.custom)
+            button.setImage(settingsImage, for: .normal)
+            button.setImage(settingsImage, for: .highlighted)
+            button.frame = CGRect(origin: CGPoint.zero, size: CGSize(width: buttonSize, height: buttonSize))
+            button.layoutIfNeeded()
+            button.addTarget(self, action: #selector(self.settingsPressed(_:)), for: .touchUpInside)
+            return button
+        }()
+        
         override func viewDidLoad() {
             super.viewDidLoad()
             self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.backPressed(_:)))
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIElements.settingsImage?.crop(toWidth: 20, toHeight: 20), style: .plain, target: self, action: #selector(self.settingsPressed(_:)))
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: self.settingsButton)
             ViewController.setAttributes(for: [self.navigationItem.leftBarButtonItem, self.navigationItem.rightBarButtonItem])
             self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIElements.Font.medium(15.0) as Any]
             self.navigationItem.title = "Aquatic Saver"
