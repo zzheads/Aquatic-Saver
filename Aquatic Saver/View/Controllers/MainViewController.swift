@@ -93,7 +93,7 @@ class MainViewController: UIElements.ViewController {
         self.simNumberLabel.text = device.phone
         self.lastUpdatedLabel.text = device.lastUpdate
         
-        self.textFields[.name]?.text = device.name
+        self.textFields[.name]?.text = "\(device.name ?? "") (\(device.status ?? .unknown))"
         self.textFields[.model]?.text = device.model
         if let sosNumbers = device.attributes?.sosNumbers {
             for i in 0..<sosNumbers.count {

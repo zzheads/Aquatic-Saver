@@ -22,6 +22,7 @@ class Device: Codable {
     var lastUpdate      : String?
     var model           : String?
     var positionId      : Int?
+    var status          : DeviceStatus?
     var photo           : Data?
 }
 
@@ -72,6 +73,7 @@ extension Device {
         let marker = GMSMarker(position: coordinate)
         marker.title = self.name
         marker.snippet = self.onMapDescription
+        marker.icon = GMSMarker.markerImage(with: self.markerColor)
         return marker
     }
 }

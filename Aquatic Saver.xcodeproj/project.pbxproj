@@ -65,6 +65,7 @@
 		A618519C214BB34600E6CC51 /* Rubik-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6185191214BB34600E6CC51 /* Rubik-Italic.ttf */; };
 		A618519E214BB34600E6CC51 /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6185193214BB34600E6CC51 /* Rubik-MediumItalic.ttf */; };
 		A618519F214BB34600E6CC51 /* Rubik-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6185194214BB34600E6CC51 /* Rubik-LightItalic.ttf */; };
+		A667481C214EA8F200D323E3 /* DeviceStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A667481B214EA8F200D323E3 /* DeviceStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +103,7 @@
 		A6344A8C213449EC0064AABB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6344A9221344AF60064AABB /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A6344A9721344DC60064AABB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A667481B214EA8F200D323E3 /* DeviceStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceStatus.swift; sourceTree = "<group>"; };
 		A6700388213907DD00B0E718 /* Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attributes.swift; sourceTree = "<group>"; };
 		A670038A2139088800B0E718 /* Extensible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensible.swift; sourceTree = "<group>"; };
 		A670038C21390A8200B0E718 /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
@@ -361,6 +363,7 @@
 			children = (
 				A67003A8213992BA00B0E718 /* Device.swift */,
 				A67003AA2139930700B0E718 /* DeviceAttributes.swift */,
+				A667481B214EA8F200D323E3 /* DeviceStatus.swift */,
 			);
 			path = Device;
 			sourceTree = "<group>";
@@ -570,6 +573,7 @@
 				A6185106214BAE9900E6CC51 /* SettingsViewController.swift in Sources */,
 				A6185107214BAE9900E6CC51 /* MainViewController.swift in Sources */,
 				A6185108214BAE9900E6CC51 /* RegisterDeviceViewController.swift in Sources */,
+				A667481C214EA8F200D323E3 /* DeviceStatus.swift in Sources */,
 				A6185109214BAE9900E6CC51 /* MapViewController.swift in Sources */,
 				A618510A214BAE9900E6CC51 /* DataSource.swift in Sources */,
 				A618510B214BAE9900E6CC51 /* ConfigurableCell.swift in Sources */,
@@ -646,7 +650,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zzheads.AquaticSaver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -666,7 +670,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zzheads.AquaticSaver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

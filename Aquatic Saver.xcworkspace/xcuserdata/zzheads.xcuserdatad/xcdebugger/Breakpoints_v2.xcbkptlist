@@ -2,4 +2,54 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Aquatic Saver/View/Controllers/MainViewController.swift"
+            timestampString = "558804615.232307"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
+            landmarkName = "deletePressed(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Aquatic_Saver.MainViewController.deletePressed(Material.RaisedButton) -&gt; ()"
+                  moduleName = "Aquatic Saver"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zzheads/XCode/Aquatic%20Saver/Aquatic%20Saver/View/Controllers/MainViewController.swift"
+                  timestampString = "558804615.3306479"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "130"
+                  endingLineNumber = "130"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool) -&gt; () in Aquatic_Saver.MainViewController.deletePressed(Material.RaisedButton) -&gt; ()"
+                  moduleName = "Aquatic Saver"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zzheads/XCode/Aquatic%20Saver/Aquatic%20Saver/View/Controllers/MainViewController.swift"
+                  timestampString = "558804615.332165"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "131"
+                  endingLineNumber = "131"
+                  offsetFromSymbolStart = "40">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

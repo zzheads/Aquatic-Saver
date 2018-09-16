@@ -69,25 +69,14 @@ class MapViewController: UIElements.ViewController {
         PushNotification(title: "WebSocket", message: "Device position updated").push()
     }
     
-    func marker(_ position: Position? = nil) -> GMSMarker? {
-        guard let latitude = position?.latitude, let longitude = position?.longitude else { return nil }
-        
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: longitude, longitude: latitude)
-        marker.title = self.device?.name
-        marker.snippet = self.device?.onMapDescription
-        marker.map = self.map
-        self.marker = marker
-        return marker
-    }
-    
     func update(_ position: Position? = nil) {
-        guard let latitude = position?.latitude, let longitude = position?.longitude else {
+        guard let device = self.device, let latitude = position?.latitude, let longitude = position?.longitude else {
             self.updateCamera()
             return
         }
         if self.marker == nil {
-            self.marker = self.marker(position)
+            self.marker = device.marker(at: CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
+            self.marker?.map = self.map
         }
         self.marker?.position = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         self.updateCamera()
