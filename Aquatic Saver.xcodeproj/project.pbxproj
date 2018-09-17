@@ -66,6 +66,11 @@
 		A618519E214BB34600E6CC51 /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6185193214BB34600E6CC51 /* Rubik-MediumItalic.ttf */; };
 		A618519F214BB34600E6CC51 /* Rubik-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6185194214BB34600E6CC51 /* Rubik-LightItalic.ttf */; };
 		A667481C214EA8F200D323E3 /* DeviceStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A667481B214EA8F200D323E3 /* DeviceStatus.swift */; };
+		A688B1C7214FFB2400736BD7 /* EventAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A688B1C6214FFB2400736BD7 /* EventAttributes.swift */; };
+		A688B1C9214FFB6600736BD7 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = A688B1C8214FFB6600736BD7 /* Event.swift */; };
+		A688B1CB214FFB9600736BD7 /* EventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A688B1CA214FFB9600736BD7 /* EventType.swift */; };
+		A688B1CE2150075900736BD7 /* Strings.json in Resources */ = {isa = PBXBuildFile; fileRef = A688B1CD2150075900736BD7 /* Strings.json */; };
+		A688B1D321500C4500736BD7 /* Translator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A688B1D221500C4500736BD7 /* Translator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,6 +124,11 @@
 		A67003A42139584400B0E718 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A67003A8213992BA00B0E718 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		A67003AA2139930700B0E718 /* DeviceAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceAttributes.swift; sourceTree = "<group>"; };
+		A688B1C6214FFB2400736BD7 /* EventAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventAttributes.swift; sourceTree = "<group>"; };
+		A688B1C8214FFB6600736BD7 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		A688B1CA214FFB9600736BD7 /* EventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventType.swift; sourceTree = "<group>"; };
+		A688B1CD2150075900736BD7 /* Strings.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Strings.json; sourceTree = "<group>"; };
+		A688B1D221500C4500736BD7 /* Translator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translator.swift; sourceTree = "<group>"; };
 		A6A7662621416C4E00F9459C /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
 		A6A7662821416CC600F9459C /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		A6A7662A21416CDD00F9459C /* CellTower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTower.swift; sourceTree = "<group>"; };
@@ -253,6 +263,7 @@
 				A608E2EF213C5BAD003D2C23 /* Character + Int + String +.swift */,
 				A6B6CB92213E8CC9003E4BBC /* UIViewController +.swift */,
 				A6344A8C213449EC0064AABB /* Info.plist */,
+				A688B1D221500C4500736BD7 /* Translator.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -283,6 +294,7 @@
 		A6344A9A21347B4B0064AABB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A688B1CC215006EE00736BD7 /* Localization */,
 				A6185163214BB26400E6CC51 /* Fonts */,
 				A6344A87213449EC0064AABB /* Assets.xcassets */,
 			);
@@ -315,6 +327,7 @@
 		A670038F21390B6300B0E718 /* Traccar */ = {
 			isa = PBXGroup;
 			children = (
+				A688B1C5214FFB0700736BD7 /* Event */,
 				A6A7662521416C3D00F9459C /* Position */,
 				A608E2E8213C594D003D2C23 /* Contact */,
 				A608E2E1213C574E003D2C23 /* Command */,
@@ -374,6 +387,24 @@
 				A670038C21390A8200B0E718 /* Server.swift */,
 			);
 			path = Server;
+			sourceTree = "<group>";
+		};
+		A688B1C5214FFB0700736BD7 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				A688B1C6214FFB2400736BD7 /* EventAttributes.swift */,
+				A688B1C8214FFB6600736BD7 /* Event.swift */,
+				A688B1CA214FFB9600736BD7 /* EventType.swift */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
+		A688B1CC215006EE00736BD7 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				A688B1CD2150075900736BD7 /* Strings.json */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 		A6A7662521416C3D00F9459C /* Position */ = {
@@ -488,6 +519,7 @@
 				A6185198214BB34600E6CC51 /* Rubik-BoldItalic.ttf in Resources */,
 				A618519C214BB34600E6CC51 /* Rubik-Italic.ttf in Resources */,
 				A6185199214BB34600E6CC51 /* Rubik-Black.ttf in Resources */,
+				A688B1CE2150075900736BD7 /* Strings.json in Resources */,
 				A618514A214BAFAE00E6CC51 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -573,6 +605,7 @@
 				A6185106214BAE9900E6CC51 /* SettingsViewController.swift in Sources */,
 				A6185107214BAE9900E6CC51 /* MainViewController.swift in Sources */,
 				A6185108214BAE9900E6CC51 /* RegisterDeviceViewController.swift in Sources */,
+				A688B1D321500C4500736BD7 /* Translator.swift in Sources */,
 				A667481C214EA8F200D323E3 /* DeviceStatus.swift in Sources */,
 				A6185109214BAE9900E6CC51 /* MapViewController.swift in Sources */,
 				A618510A214BAE9900E6CC51 /* DataSource.swift in Sources */,
@@ -585,8 +618,10 @@
 				A6185113214BAE9900E6CC51 /* AppError.swift in Sources */,
 				A6185114214BAE9900E6CC51 /* AppNotification.swift in Sources */,
 				A6185115214BAE9900E6CC51 /* Position.swift in Sources */,
+				A688B1C9214FFB6600736BD7 /* Event.swift in Sources */,
 				A6185116214BAE9900E6CC51 /* Network.swift in Sources */,
 				A6185117214BAE9900E6CC51 /* CellTower.swift in Sources */,
+				A688B1CB214FFB9600736BD7 /* EventType.swift in Sources */,
 				A6185118214BAE9900E6CC51 /* WiFiAccessPoint.swift in Sources */,
 				A6185119214BAE9900E6CC51 /* Contact.swift in Sources */,
 				A618511A214BAE9900E6CC51 /* Command.swift in Sources */,
@@ -603,6 +638,7 @@
 				A6185125214BAE9900E6CC51 /* WebService.swift in Sources */,
 				A6185126214BAE9900E6CC51 /* APIClient.swift in Sources */,
 				A6185127214BAE9900E6CC51 /* SocketObserver.swift in Sources */,
+				A688B1C7214FFB2400736BD7 /* EventAttributes.swift in Sources */,
 				A6185128214BAE9900E6CC51 /* UserDefaults +.swift in Sources */,
 				A6185129214BAE9900E6CC51 /* AppDelegate.swift in Sources */,
 				A618512A214BAE9900E6CC51 /* Setting.swift in Sources */,

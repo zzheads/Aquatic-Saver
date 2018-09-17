@@ -52,10 +52,9 @@ class Setting<T: Codable & CustomStringConvertible>: SettingType {
 
 class Settings {
     static var shared: [SettingType] = [
-        Setting(key: "Server address", value: "132.197.0.34:8080"),
-        Setting(key: "Maximum connections", value: 10),
-        Setting(key: "Remember password", value: true),
-        Setting(key: "Supported devices", value: ["KVZ-612", "KVZ-302", "KVZ-111"])
+        Setting(key: "Server address", value: "http://62.109.28.53/api/"),
+        Setting(key: "Supported devices", value: ["ZX-612", "ZX-302"]),
+        Setting(key: "Language", value: true)
     ]
 }
 
@@ -63,6 +62,11 @@ extension Array where Element == SettingType {
     func update(_ setting: SettingType?) {
         guard let setting = setting, let index = Settings.shared.index(where: {$0.key == setting.key}) else { return }
         Settings.shared[index] = setting
+    }
+    
+    subscript(index: String) -> Element? {
+        get { return self.filter{$0.key == index}.first }
+        set { self.filter{$0.key == index}.first?.setValue(newValue?.getValue() as Any) }
     }
 }
 

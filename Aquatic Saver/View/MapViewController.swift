@@ -13,6 +13,7 @@ import Material
 
 class MapViewController: UIElements.ViewController {
     var device      : Device?
+    
     lazy var map    : GMSMapView = {
         let latitude = 151.20
         let longitude = -33.86
@@ -47,26 +48,12 @@ class MapViewController: UIElements.ViewController {
         self.btnRefresh.addTarget(self, action: #selector(self.updatePressed(_:)), for: .touchUpInside)
         
         self.view.sendSubview(toBack: map)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.gotObjects(_:)), name: AppNotification.socketObjectsName, object: nil)
+        SocketObserver.default.register(self) { self.showAlert(title: "Socket observing error:", message: $0.localizedDescription, style: .alert) }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.updatePressed()
-    }
-    
-    @objc func gotObjects(_ notification: Notification) {
-        guard
-            let key = notification.userInfo?["key"] as? String,
-            let json = notification.userInfo?["json"] as? [JSON],
-            SocketObserver.WebSocketObject(rawValue: key) == .positions,
-            let positions = [Position](fromJSONArray: json)
-            else {
-                PushNotification(title: "WebSocket", message: "Got \(notification.userInfo ?? [:]), but can not use it.").push()
-                return
-        }
-        self.update(positions.last)
-        PushNotification(title: "WebSocket", message: "Device position updated").push()
     }
     
     func update(_ position: Position? = nil) {
@@ -114,23 +101,17 @@ extension MapViewController {
 }
 
 extension MapViewController: ObjectsObservable {
-    func socketDidReceived(key: SocketObserver.WebSocketObject, json: [JSON]) {
-        switch key {
-        case .positions     :
-            guard let positions = [Position](fromJSONArray: json) else {
-                self.showAlert(title: "Socket data", message: "Serialization data received from socket error: \(key) \(json)", style: .alert)
-                return
-            }
-            self.update(positions.last)
-            
-        case .devices       :
-            guard let devices = [Device](fromJSONArray: json) else {
-                self.showAlert(title: "Socket data", message: "Serialization data received from socket error: \(key) \(json)", style: .alert)
-                return
-            }
-            self.device = devices.first
-            self.update(nil)
-        }
+    func socketDidReceived(_ positions: [Position]) {
+        self.update(positions.last)
+    }
+    
+    func socketDidReceived(_ devices: [Device]) {
+        self.device = devices.first
+        self.updatePressed()
+    }
+    
+    func socketDidReceived(_ events: [Event]) {
+        self.showAlert(title: "New events", message: "\(events)", style: .alert)
     }
 }
 

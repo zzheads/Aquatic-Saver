@@ -10,7 +10,7 @@ import UIKit
 
 extension UIViewController {
     func showAlert(title: String, message: String, style: UIAlertControllerStyle, completion: (() -> Void)? = nil) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
+        let alertController = UIAlertController(title: Translator.shared.translate(title), message: Translator.shared.translate(message), preferredStyle: style)
         let okAction = UIAlertAction(title: "OK", style: .default) { action in
             guard let completion = completion else {
                 return
@@ -22,7 +22,7 @@ extension UIViewController {
     }
     
     func showAlertAndAsk(title: String, message: String, style: UIAlertControllerStyle, completion: @escaping (Bool) -> Void) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
+        let alertController = UIAlertController(title: Translator.shared.translate(title), message: Translator.shared.translate(message), preferredStyle: style)
         let okAction = UIAlertAction(title: "OK", style: .default) { action in
             completion(true)
         }
@@ -35,7 +35,7 @@ extension UIViewController {
     }
     
     func showAlertAndPrompt(title: String, message: String, style: UIAlertControllerStyle, defaultValue: String?, completion: @escaping (String?) -> Void) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
+        let alertController = UIAlertController(title: Translator.shared.translate(title), message: Translator.shared.translate(message), preferredStyle: style)
         alertController.addTextField()
         alertController.textFields?.first?.text = defaultValue
         let okAction = UIAlertAction(title: "OK", style: .default) { action in
@@ -60,7 +60,7 @@ extension UIViewController {
         toastLabel.textColor = UIColor.white
         toastLabel.textAlignment = .center;
         toastLabel.font = UIElements.Font.regular(13.0)
-        toastLabel.text = message
+        toastLabel.text = Translator.shared.translate(message)
         toastLabel.alpha = 1.0
         toastLabel.layer.cornerRadius = 10;
         toastLabel.clipsToBounds  =  true

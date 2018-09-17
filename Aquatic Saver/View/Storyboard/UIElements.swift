@@ -102,7 +102,7 @@ struct UIElements {
     static func textField(_ placeholder: String? = nil, color: UIColor = Color.darkBlue, font: UIFont? = Font.regular(12.0), isPass: Bool = false) -> TextField {
         let textField = TextField()
         textField.font = font
-        textField.placeholder = placeholder
+        textField.placeholder = Translator.shared.translate(placeholder)
         textField.textColor = color
         textField.dividerActiveColor = Color.darkBlue
         textField.placeholderActiveColor = Color.darkBlue
@@ -118,7 +118,7 @@ struct UIElements {
     }
     
     static func raisedButton(_ title: String? = nil, titleColor: UIColor = .white, backColor: UIColor = Color.darkBlue, font: UIFont? = Font.medium(14.0)) -> RaisedButton {
-        let button = RaisedButton(title: title, titleColor: titleColor)
+        let button = RaisedButton(title: Translator.shared.translate(title), titleColor: titleColor)
         button.titleLabel?.font = font
         button.backgroundColor = backColor
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -126,14 +126,14 @@ struct UIElements {
     }
     
     static func flatButton(_ title: String? = nil, titleColor: UIColor = Color.darkBlue, backColor: UIColor = .clear, font: UIFont? = Font.regular(12.0)) -> FlatButton {
-        let button = FlatButton(title: title, titleColor: titleColor)
+        let button = FlatButton(title: Translator.shared.translate(title), titleColor: titleColor)
         button.titleLabel?.font = font
         button.backgroundColor = backColor
         return button
     }
     
     static func checkButton(_ title: String?, titleColor: UIColor = Color.darkBlue) -> CheckButton {
-        let button = CheckButton(title: title, titleColor: titleColor)
+        let button = CheckButton(title: Translator.shared.translate(title), titleColor: titleColor)
         button.titleLabel?.font = Font.regular(12.0)
         button.checkmarkColor = .white
         button.setIconColor(Color.darkBlue, for: .selected)

@@ -9,8 +9,7 @@
 import Foundation
 
 protocol Extensible: Equatable {
-    associatedtype Object
-    var id                      : Int? { get set }
+    var id  : Int? { get set }
     static func ==(lhs: Self, rhs: Self) -> Bool
 }
 

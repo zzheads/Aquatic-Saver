@@ -10,15 +10,24 @@ import Foundation
 import Starscream
 
 protocol ObjectsObservable {
-    func socketDidReceived(key: SocketObserver.WebSocketObject, json: [JSON])
+    func socketDidReceived(_ devices: [Device])
+    func socketDidReceived(_ positions: [Position])
+    func socketDidReceived(_ events: [Event])
+}
+
+extension ObjectsObservable {
+    func socketDidReceived(_ devices: [Device]) {}
+    func socketDidReceived(_ positions: [Position]) {}
+    func socketDidReceived(_ events: [Event]) {}
 }
 
 class SocketObserver: NSObject {
     static let `default` = SocketObserver(center: NotificationCenter.default)
     
-    let center  : NotificationCenter
-    var socket  : WebSocket?
-    var observers: [ObjectsObservable] = []
+    private let center      : NotificationCenter
+    private var socket      : WebSocket?
+    private var observers   : [ObjectsObservable] = []
+    private var errorHandler: ((Error) -> Void)?
 
     private init(center: NotificationCenter) {
         self.center = center
@@ -29,8 +38,9 @@ class SocketObserver: NSObject {
         self.center.removeObserver(self)
     }
 
-    func register(_ observer: ObjectsObservable) {
+    func register(_ observer: ObjectsObservable, errorHandler: ((Error) -> Void)? = nil) {
         self.observers.append(observer)
+        self.errorHandler = errorHandler
     }
     
     func start() {
@@ -51,8 +61,8 @@ class SocketObserver: NSObject {
 
 extension SocketObserver: WebSocketDelegate {
     enum WebSocketObject: String, Codable {
-        case devices, positions
-        static let all: [WebSocketObject] = [.devices, .positions]
+        case devices, positions, events
+        static let all: [WebSocketObject] = [.devices, .positions, .events]
     }
     
     func websocketDidConnect(socket: WebSocketClient) {
@@ -74,7 +84,27 @@ extension SocketObserver: WebSocketDelegate {
                 return
             }
             self.center.post(AppNotification.socketObjects(key: objectsKey, json: jsonArray).notification)
-            self.observers.forEach { $0.socketDidReceived(key: objectsKey, json: jsonArray) }
+            var isSerializationSuccess = false
+            switch objectsKey {
+            case .devices   :
+                if let devices = [Device](fromJSONArray: jsonArray) {
+                    self.observers.forEach { $0.socketDidReceived(devices) }
+                    isSerializationSuccess = true
+                }
+            case .events   :
+                if let events = [Event](fromJSONArray: jsonArray) {
+                    self.observers.forEach { $0.socketDidReceived(events) }
+                    isSerializationSuccess = true
+                }
+            case .positions   :
+                if let positions = [Position](fromJSONArray: jsonArray) {
+                    self.observers.forEach { $0.socketDidReceived(positions) }
+                    isSerializationSuccess = true
+                }
+            }
+            if !isSerializationSuccess {
+                self.errorHandler?(AppError.serialization(message: "Key: \(objectsKey), JSON: \(jsonArray)").error)
+            }
         }
     }
     

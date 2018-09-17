@@ -11,7 +11,14 @@ import UIKit
 class SettingsViewController: UIElements.ViewController {
     lazy var dataSource: DataSource<SettingType, SettingTypeCell> = {
         return DataSource<SettingType, SettingTypeCell>(Settings.shared) { setting in
-            Settings.shared.update(setting)
+            if let setting = setting {
+                Settings.shared.update(setting)
+                if setting.key == "Language" {
+                    self.showAlertAndAsk(title: Translator.shared.translate("Language"), message: Translator.shared.translate("Changes will take effect after reload app"), style: .alert) { reload in
+                        if reload { UIApplication.shared.keyWindow?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() }
+                    }
+                }
+            }
         }
     }()
     
@@ -38,8 +45,9 @@ class SettingsViewController: UIElements.ViewController {
         
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(self.saveSettings))
+        self.navigationItem.rightBarButtonItem?.title = Translator.shared.translate("Save") as String
         UIElements.ViewController.setAttributes(for: [self.navigationItem.rightBarButtonItem])
-        self.navigationItem.title = "Settings"
+        self.navigationItem.title = Translator.shared.translate("Settings") as String
     }
     
     override func viewWillAppear(_ animated: Bool) {

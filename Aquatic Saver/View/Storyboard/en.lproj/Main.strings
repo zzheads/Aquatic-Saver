@@ -1,0 +1,54 @@
+
+/* Class = "UILabel"; text = "SOS number #3:"; ObjectID = "00T-3q-1mc"; */
+"00T-3q-1mc.text" = "SOS number #3:";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "3oO-Vx-L2Y"; */
+"3oO-Vx-L2Y.text" = "Label";
+
+/* Class = "UILabel"; text = "Model:"; ObjectID = "4k3-vS-y2a"; */
+"4k3-vS-y2a.text" = "Model:";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "CKo-fh-NMv"; */
+"CKo-fh-NMv.title" = " ";
+
+/* Class = "UILabel"; text = "SOS number #1:"; ObjectID = "Gsi-9X-AyZ"; */
+"Gsi-9X-AyZ.text" = "SOS number #1:";
+
+/* Class = "UILabel"; text = "Last updated:"; ObjectID = "J4W-cI-PPM"; */
+"J4W-cI-PPM.text" = "Last updated:";
+
+/* Class = "UILabel"; text = "SIM number:"; ObjectID = "LgD-tJ-kyU"; */
+"LgD-tJ-kyU.text" = "SIM number:";
+
+/* Class = "UILabel"; text = "Unique Id:"; ObjectID = "PTy-3K-Yxt"; */
+"PTy-3K-Yxt.text" = "Unique Id:";
+
+/* Class = "UINavigationItem"; title = "Aquatic Saver"; ObjectID = "aoB-Vb-VMO"; */
+"aoB-Vb-VMO.title" = "Aquatic Saver";
+
+/* Class = "UINavigationItem"; title = "Aquatic Saver"; ObjectID = "bQT-ue-W6z"; */
+"bQT-ue-W6z.title" = "Aquatic Saver";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "cXv-2r-P0t"; */
+"cXv-2r-P0t.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "cbd-Ez-JGv"; */
+"cbd-Ez-JGv.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "f7T-Yk-3pg"; */
+"f7T-Yk-3pg.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "fnU-8t-MiL"; */
+"fnU-8t-MiL.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "SOS number #2:"; ObjectID = "mkj-Z7-RQ2"; */
+"mkj-Z7-RQ2.text" = "SOS number #2:";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "ogP-od-Fif"; */
+"ogP-od-Fif.title" = "Settings";
+
+/* Class = "UILabel"; text = "Name:"; ObjectID = "plS-Ks-JVC"; */
+"plS-Ks-JVC.text" = "Name:";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "tbc-hJ-6Vu"; */
+"tbc-hJ-6Vu.normalTitle" = "Button";

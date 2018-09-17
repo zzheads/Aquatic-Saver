@@ -23,6 +23,8 @@ class MainViewController: UIElements.ViewController {
     @IBOutlet weak var simNumberLabel: UILabel!
     @IBOutlet weak var lastUpdatedLabel: UILabel!
     
+    lazy var allLabels: [UILabel] = [self.labelName, self.labelId, self.labelNumber, self.labelStatus, self.labelUpdated, self.labelSOS1, self.labelSOS2, self.labelSOS3]
+    
     enum TextFieldsKey: Int {
         case name = 3, model = 4, sos1 = 0, sos2 = 1, sos3 = 2
     }
@@ -38,6 +40,9 @@ class MainViewController: UIElements.ViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.allLabels.forEach { $0.text = Translator.shared.translate($0.text) }
+    
         self.textFields.forEach { self.view.addSubview($1) }
         self.textFields.forEach { key, textField in
             let label = labels[key]!

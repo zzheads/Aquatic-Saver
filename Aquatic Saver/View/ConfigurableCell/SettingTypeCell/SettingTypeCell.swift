@@ -19,7 +19,7 @@ class SettingTypeCell: UITableViewCell, ConfigurableCell {
     func configure(with item: SettingType, modify: ((SettingType?) -> Void)? = nil) {
         self.setting = item
         self.modify = modify
-        self.keyLabel.text = item.key
+        self.keyLabel.text = Translator.shared.translate(item.key) as String
         self.valueSwitch.addTarget(self, action: #selector(self.switchChanged(_:)), for: .valueChanged)
         if item.type == .bool { self.valueLabel.removeFromSuperview() } else { self.valueSwitch.removeFromSuperview() }
         switch item.type {
