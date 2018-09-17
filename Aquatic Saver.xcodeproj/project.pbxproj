@@ -71,6 +71,15 @@
 		A688B1CB214FFB9600736BD7 /* EventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A688B1CA214FFB9600736BD7 /* EventType.swift */; };
 		A688B1CE2150075900736BD7 /* Strings.json in Resources */ = {isa = PBXBuildFile; fileRef = A688B1CD2150075900736BD7 /* Strings.json */; };
 		A688B1D321500C4500736BD7 /* Translator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A688B1D221500C4500736BD7 /* Translator.swift */; };
+		A688B1D521504F0400736BD7 /* RowBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A688B1D421504F0400736BD7 /* RowBuilder.swift */; };
+		A688B1D721504FDE00736BD7 /* TableViewDirector.swift in Sources */ = {isa = PBXBuildFile; fileRef = A688B1D621504FDE00736BD7 /* TableViewDirector.swift */; };
+		A688B1DA21505DB200736BD7 /* StringCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A688B1D921505DB200736BD7 /* StringCell.xib */; };
+		A688B1DC21505E9700736BD7 /* StringCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A688B1DB21505E9700736BD7 /* StringCell.swift */; };
+		A688B1DF215060DD00736BD7 /* BoolCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A688B1DE215060DD00736BD7 /* BoolCell.swift */; };
+		A688B1E12150611D00736BD7 /* BoolCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A688B1E02150611D00736BD7 /* BoolCell.xib */; };
+		A688B1E42150629000736BD7 /* SegmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A688B1E32150629000736BD7 /* SegmentCell.swift */; };
+		A688B1E6215062DA00736BD7 /* SegmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A688B1E5215062DA00736BD7 /* SegmentCell.xib */; };
+		A688B1E82150672A00736BD7 /* NewSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A688B1E72150672A00736BD7 /* NewSettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -129,6 +138,15 @@
 		A688B1CA214FFB9600736BD7 /* EventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventType.swift; sourceTree = "<group>"; };
 		A688B1CD2150075900736BD7 /* Strings.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Strings.json; sourceTree = "<group>"; };
 		A688B1D221500C4500736BD7 /* Translator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translator.swift; sourceTree = "<group>"; };
+		A688B1D421504F0400736BD7 /* RowBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowBuilder.swift; sourceTree = "<group>"; };
+		A688B1D621504FDE00736BD7 /* TableViewDirector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDirector.swift; sourceTree = "<group>"; };
+		A688B1D921505DB200736BD7 /* StringCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StringCell.xib; sourceTree = "<group>"; };
+		A688B1DB21505E9700736BD7 /* StringCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCell.swift; sourceTree = "<group>"; };
+		A688B1DE215060DD00736BD7 /* BoolCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoolCell.swift; sourceTree = "<group>"; };
+		A688B1E02150611D00736BD7 /* BoolCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BoolCell.xib; sourceTree = "<group>"; };
+		A688B1E32150629000736BD7 /* SegmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentCell.swift; sourceTree = "<group>"; };
+		A688B1E5215062DA00736BD7 /* SegmentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SegmentCell.xib; sourceTree = "<group>"; };
+		A688B1E72150672A00736BD7 /* NewSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSettingsViewController.swift; sourceTree = "<group>"; };
 		A6A7662621416C4E00F9459C /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
 		A6A7662821416CC600F9459C /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		A6A7662A21416CDD00F9459C /* CellTower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTower.swift; sourceTree = "<group>"; };
@@ -310,6 +328,7 @@
 				A67003A42139584400B0E718 /* MainViewController.swift */,
 				A6D452D42139C2FF00387923 /* RegisterDeviceViewController.swift */,
 				A6B6CB90213E7AFC003E4BBC /* MapViewController.swift */,
+				A688B1E72150672A00736BD7 /* NewSettingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -343,8 +362,13 @@
 		A670039C21391F0300B0E718 /* ConfigurableCell */ = {
 			isa = PBXGroup;
 			children = (
+				A688B1D421504F0400736BD7 /* RowBuilder.swift */,
+				A688B1D621504FDE00736BD7 /* TableViewDirector.swift */,
 				A6B6CB94213EAD40003E4BBC /* DataSource.swift */,
 				A670039E21391F7800B0E718 /* ConfigurableCell.swift */,
+				A688B1E22150626500736BD7 /* SegmentCell */,
+				A688B1DD215060C200736BD7 /* BoolCell */,
+				A688B1D821505D9400736BD7 /* StringCell */,
 				A6D452D62139C62800387923 /* DeviceCell */,
 				A62B449E2136B7100083D8EF /* SettingTypeCell */,
 			);
@@ -405,6 +429,34 @@
 				A688B1CD2150075900736BD7 /* Strings.json */,
 			);
 			path = Localization;
+			sourceTree = "<group>";
+		};
+		A688B1D821505D9400736BD7 /* StringCell */ = {
+			isa = PBXGroup;
+			children = (
+				A688B1D921505DB200736BD7 /* StringCell.xib */,
+				A688B1DB21505E9700736BD7 /* StringCell.swift */,
+			);
+			path = StringCell;
+			sourceTree = "<group>";
+		};
+		A688B1DD215060C200736BD7 /* BoolCell */ = {
+			isa = PBXGroup;
+			children = (
+				A688B1DE215060DD00736BD7 /* BoolCell.swift */,
+				A688B1E02150611D00736BD7 /* BoolCell.xib */,
+			);
+			name = BoolCell;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		A688B1E22150626500736BD7 /* SegmentCell */ = {
+			isa = PBXGroup;
+			children = (
+				A688B1E32150629000736BD7 /* SegmentCell.swift */,
+				A688B1E5215062DA00736BD7 /* SegmentCell.xib */,
+			);
+			path = SegmentCell;
 			sourceTree = "<group>";
 		};
 		A6A7662521416C3D00F9459C /* Position */ = {
@@ -505,8 +557,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A688B1DA21505DB200736BD7 /* StringCell.xib in Resources */,
 				A618519A214BB34600E6CC51 /* Rubik-Bold.ttf in Resources */,
 				A618514E214BAFD300E6CC51 /* Assets.xcassets in Resources */,
+				A688B1E6215062DA00736BD7 /* SegmentCell.xib in Resources */,
 				A6185196214BB34600E6CC51 /* Rubik-Regular.ttf in Resources */,
 				A618519B214BB34600E6CC51 /* Rubik-Medium.ttf in Resources */,
 				A618514D214BAFC900E6CC51 /* LaunchScreen.storyboard in Resources */,
@@ -517,6 +571,7 @@
 				A6185197214BB34600E6CC51 /* Rubik-Light.ttf in Resources */,
 				A618514B214BAFBB00E6CC51 /* DeviceCell.xib in Resources */,
 				A6185198214BB34600E6CC51 /* Rubik-BoldItalic.ttf in Resources */,
+				A688B1E12150611D00736BD7 /* BoolCell.xib in Resources */,
 				A618519C214BB34600E6CC51 /* Rubik-Italic.ttf in Resources */,
 				A6185199214BB34600E6CC51 /* Rubik-Black.ttf in Resources */,
 				A688B1CE2150075900736BD7 /* Strings.json in Resources */,
@@ -598,8 +653,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A688B1E82150672A00736BD7 /* NewSettingsViewController.swift in Sources */,
 				A6185102214BAE9900E6CC51 /* UIElements.swift in Sources */,
 				A6185103214BAE9900E6CC51 /* Router.swift in Sources */,
+				A688B1DC21505E9700736BD7 /* StringCell.swift in Sources */,
 				A6185104214BAE9900E6CC51 /* LoginViewController.swift in Sources */,
 				A6185105214BAE9900E6CC51 /* RegisterViewController.swift in Sources */,
 				A6185106214BAE9900E6CC51 /* SettingsViewController.swift in Sources */,
@@ -608,6 +665,7 @@
 				A688B1D321500C4500736BD7 /* Translator.swift in Sources */,
 				A667481C214EA8F200D323E3 /* DeviceStatus.swift in Sources */,
 				A6185109214BAE9900E6CC51 /* MapViewController.swift in Sources */,
+				A688B1DF215060DD00736BD7 /* BoolCell.swift in Sources */,
 				A618510A214BAE9900E6CC51 /* DataSource.swift in Sources */,
 				A618510B214BAE9900E6CC51 /* ConfigurableCell.swift in Sources */,
 				A618510D214BAE9900E6CC51 /* DeviceCell.swift in Sources */,
@@ -624,9 +682,12 @@
 				A688B1CB214FFB9600736BD7 /* EventType.swift in Sources */,
 				A6185118214BAE9900E6CC51 /* WiFiAccessPoint.swift in Sources */,
 				A6185119214BAE9900E6CC51 /* Contact.swift in Sources */,
+				A688B1D521504F0400736BD7 /* RowBuilder.swift in Sources */,
 				A618511A214BAE9900E6CC51 /* Command.swift in Sources */,
 				A618511B214BAE9900E6CC51 /* CommandType.swift in Sources */,
+				A688B1E42150629000736BD7 /* SegmentCell.swift in Sources */,
 				A618511C214BAE9900E6CC51 /* CommandAttributes.swift in Sources */,
+				A688B1D721504FDE00736BD7 /* TableViewDirector.swift in Sources */,
 				A618511D214BAE9900E6CC51 /* Server.swift in Sources */,
 				A618511E214BAE9900E6CC51 /* Device.swift in Sources */,
 				A618511F214BAE9900E6CC51 /* DeviceAttributes.swift in Sources */,

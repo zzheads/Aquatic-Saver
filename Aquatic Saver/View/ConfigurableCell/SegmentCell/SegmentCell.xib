@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Rubik-Medium.ttf">
+            <string>Rubik-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="5QK-Lw-1oB" customClass="SegmentCell" customModule="Aquatic_Saver" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5QK-Lw-1oB" id="Rsb-iH-veh">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BzV-V5-Wnd">
+                        <rect key="frame" x="16" y="14" width="200" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="200" id="jYB-Ta-9wI"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="14"/>
+                        <color key="textColor" red="0.12984204290000001" green="0.31479621260000001" blue="0.44326625930000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ya8-6o-GNU">
+                        <rect key="frame" x="232" y="7.5" width="127" height="29"/>
+                        <segments>
+                            <segment title="First"/>
+                            <segment title="Second"/>
+                        </segments>
+                        <color key="tintColor" red="0.12984204290000001" green="0.31479621260000001" blue="0.44326625930000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </segmentedControl>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Ya8-6o-GNU" firstAttribute="leading" secondItem="BzV-V5-Wnd" secondAttribute="trailing" constant="16" id="694-6e-bTQ"/>
+                    <constraint firstItem="BzV-V5-Wnd" firstAttribute="centerY" secondItem="Rsb-iH-veh" secondAttribute="centerY" id="Z2Y-SB-qmF"/>
+                    <constraint firstItem="BzV-V5-Wnd" firstAttribute="leading" secondItem="Rsb-iH-veh" secondAttribute="leadingMargin" id="rXZ-7W-jlv"/>
+                    <constraint firstItem="Ya8-6o-GNU" firstAttribute="centerY" secondItem="Rsb-iH-veh" secondAttribute="centerY" id="yAM-Kd-nBh"/>
+                    <constraint firstAttribute="trailing" secondItem="Ya8-6o-GNU" secondAttribute="trailing" constant="16" id="yMo-x6-xRC"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="labelKey" destination="BzV-V5-Wnd" id="NPX-zX-azq"/>
+                <outlet property="segmentValue" destination="Ya8-6o-GNU" id="B7e-tG-wFG"/>
+            </connections>
+            <point key="canvasLocation" x="-94.5" y="-66"/>
+        </tableViewCell>
+    </objects>
+</document>
