@@ -26,12 +26,12 @@
                   moduleName = "Aquatic Saver"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zzheads/XCode/Aquatic%20Saver/Aquatic%20Saver/View/Controllers/MainViewController.swift"
-                  timestampString = "558804615.3306479"
+                  timestampString = "558862195.734905"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "130"
                   endingLineNumber = "130"
-                  offsetFromSymbolStart = "24">
+                  offsetFromSymbolStart = "21">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -41,12 +41,12 @@
                   moduleName = "Aquatic Saver"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/zzheads/XCode/Aquatic%20Saver/Aquatic%20Saver/View/Controllers/MainViewController.swift"
-                  timestampString = "558804615.332165"
+                  timestampString = "558862195.738008"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "131"
                   endingLineNumber = "131"
-                  offsetFromSymbolStart = "40">
+                  offsetFromSymbolStart = "42">
                </Location>
             </Locations>
          </BreakpointContent>

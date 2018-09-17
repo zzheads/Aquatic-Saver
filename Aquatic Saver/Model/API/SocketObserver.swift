@@ -9,11 +9,16 @@
 import Foundation
 import Starscream
 
+protocol ObjectsObservable {
+    func socketDidReceived(key: SocketObserver.WebSocketObject, json: [JSON])
+}
+
 class SocketObserver: NSObject {
     static let `default` = SocketObserver(center: NotificationCenter.default)
     
     let center  : NotificationCenter
     var socket  : WebSocket?
+    var observers: [ObjectsObservable] = []
 
     private init(center: NotificationCenter) {
         self.center = center
@@ -24,6 +29,10 @@ class SocketObserver: NSObject {
         self.center.removeObserver(self)
     }
 
+    func register(_ observer: ObjectsObservable) {
+        self.observers.append(observer)
+    }
+    
     func start() {
         self.center.addObserver(self, selector: #selector(userLogged(notification:)), name: AppNotification.userLogged(user: User()).name, object: nil)
     }
@@ -65,6 +74,7 @@ extension SocketObserver: WebSocketDelegate {
                 return
             }
             self.center.post(AppNotification.socketObjects(key: objectsKey, json: jsonArray).notification)
+            self.observers.forEach { $0.socketDidReceived(key: objectsKey, json: jsonArray) }
         }
     }
     

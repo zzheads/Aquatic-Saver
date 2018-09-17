@@ -113,3 +113,24 @@ extension MapViewController {
     }
 }
 
+extension MapViewController: ObjectsObservable {
+    func socketDidReceived(key: SocketObserver.WebSocketObject, json: [JSON]) {
+        switch key {
+        case .positions     :
+            guard let positions = [Position](fromJSONArray: json) else {
+                self.showAlert(title: "Socket data", message: "Serialization data received from socket error: \(key) \(json)", style: .alert)
+                return
+            }
+            self.update(positions.last)
+            
+        case .devices       :
+            guard let devices = [Device](fromJSONArray: json) else {
+                self.showAlert(title: "Socket data", message: "Serialization data received from socket error: \(key) \(json)", style: .alert)
+                return
+            }
+            self.device = devices.first
+            self.update(nil)
+        }
+    }
+}
+

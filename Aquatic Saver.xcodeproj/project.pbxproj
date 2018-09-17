@@ -270,10 +270,10 @@
 		A6344A9621344B990064AABB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A6D383D2214A718C005C66CB /* PushNotification */,
 				A670039221390BF500B0E718 /* Resource.swift */,
 				A670039421390E4000B0E718 /* AppError.swift */,
 				A67003A22139343B00B0E718 /* AppNotification.swift */,
+				A6D383D2214A718C005C66CB /* PushNotification */,
 				A670038F21390B6300B0E718 /* Traccar */,
 				A670038E21390B5C00B0E718 /* API */,
 			);
