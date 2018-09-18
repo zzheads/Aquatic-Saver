@@ -12,7 +12,6 @@
 		A6185103214BAE9900E6CC51 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61CBE5621357F1300A9AF55 /* Router.swift */; };
 		A6185104214BAE9900E6CC51 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6344A82213449EC0064AABB /* LoginViewController.swift */; };
 		A6185105214BAE9900E6CC51 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61CBE5421357D5200A9AF55 /* RegisterViewController.swift */; };
-		A6185106214BAE9900E6CC51 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62B449A2136B3D90083D8EF /* SettingsViewController.swift */; };
 		A6185107214BAE9900E6CC51 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67003A42139584400B0E718 /* MainViewController.swift */; };
 		A6185108214BAE9900E6CC51 /* RegisterDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D452D42139C2FF00387923 /* RegisterDeviceViewController.swift */; };
 		A6185109214BAE9900E6CC51 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B6CB90213E7AFC003E4BBC /* MapViewController.swift */; };
@@ -79,7 +78,9 @@
 		A688B1E12150611D00736BD7 /* BoolCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A688B1E02150611D00736BD7 /* BoolCell.xib */; };
 		A688B1E42150629000736BD7 /* SegmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A688B1E32150629000736BD7 /* SegmentCell.swift */; };
 		A688B1E6215062DA00736BD7 /* SegmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A688B1E5215062DA00736BD7 /* SegmentCell.xib */; };
-		A688B1E82150672A00736BD7 /* NewSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A688B1E72150672A00736BD7 /* NewSettingsViewController.swift */; };
+		A688B1E82150672A00736BD7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A688B1E72150672A00736BD7 /* SettingsViewController.swift */; };
+		A6E35E1C21519D820009DF52 /* ArrayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E35E1A21519D820009DF52 /* ArrayCell.swift */; };
+		A6E35E1D21519D820009DF52 /* ArrayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6E35E1B21519D820009DF52 /* ArrayCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,7 +107,6 @@
 		A61CBE5421357D5200A9AF55 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		A61CBE5621357F1300A9AF55 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		A61CBE582135C01100A9AF55 /* UserDefaults +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults +.swift"; sourceTree = "<group>"; };
-		A62B449A2136B3D90083D8EF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A62B449C2136B64C0083D8EF /* SettingTypeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingTypeCell.xib; sourceTree = "<group>"; };
 		A62B449F2136B7230083D8EF /* SettingTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTypeCell.swift; sourceTree = "<group>"; };
 		A6344A80213449EC0064AABB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -146,7 +146,7 @@
 		A688B1E02150611D00736BD7 /* BoolCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BoolCell.xib; sourceTree = "<group>"; };
 		A688B1E32150629000736BD7 /* SegmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentCell.swift; sourceTree = "<group>"; };
 		A688B1E5215062DA00736BD7 /* SegmentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SegmentCell.xib; sourceTree = "<group>"; };
-		A688B1E72150672A00736BD7 /* NewSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSettingsViewController.swift; sourceTree = "<group>"; };
+		A688B1E72150672A00736BD7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		A6A7662621416C4E00F9459C /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
 		A6A7662821416CC600F9459C /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		A6A7662A21416CDD00F9459C /* CellTower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTower.swift; sourceTree = "<group>"; };
@@ -162,6 +162,8 @@
 		A6D452D92139C7AC00387923 /* DeviceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCell.swift; sourceTree = "<group>"; };
 		A6DC7E6A2136A3DB00BB7552 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		A6DC7E6C2136A97500BB7552 /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
+		A6E35E1A21519D820009DF52 /* ArrayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayCell.swift; sourceTree = "<group>"; };
+		A6E35E1B21519D820009DF52 /* ArrayCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArrayCell.xib; sourceTree = "<group>"; };
 		FA58BD56942DFC47B4C1A9BC /* Pods-Aquatic Saver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aquatic Saver.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Aquatic Saver/Pods-Aquatic Saver.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -324,11 +326,10 @@
 			children = (
 				A6344A82213449EC0064AABB /* LoginViewController.swift */,
 				A61CBE5421357D5200A9AF55 /* RegisterViewController.swift */,
-				A62B449A2136B3D90083D8EF /* SettingsViewController.swift */,
 				A67003A42139584400B0E718 /* MainViewController.swift */,
 				A6D452D42139C2FF00387923 /* RegisterDeviceViewController.swift */,
 				A6B6CB90213E7AFC003E4BBC /* MapViewController.swift */,
-				A688B1E72150672A00736BD7 /* NewSettingsViewController.swift */,
+				A688B1E72150672A00736BD7 /* SettingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -366,6 +367,7 @@
 				A688B1D621504FDE00736BD7 /* TableViewDirector.swift */,
 				A6B6CB94213EAD40003E4BBC /* DataSource.swift */,
 				A670039E21391F7800B0E718 /* ConfigurableCell.swift */,
+				A6E35E1921519D820009DF52 /* ArrayCell */,
 				A688B1E22150626500736BD7 /* SegmentCell */,
 				A688B1DD215060C200736BD7 /* BoolCell */,
 				A688B1D821505D9400736BD7 /* StringCell */,
@@ -488,6 +490,15 @@
 			path = DeviceCell;
 			sourceTree = "<group>";
 		};
+		A6E35E1921519D820009DF52 /* ArrayCell */ = {
+			isa = PBXGroup;
+			children = (
+				A6E35E1A21519D820009DF52 /* ArrayCell.swift */,
+				A6E35E1B21519D820009DF52 /* ArrayCell.xib */,
+			);
+			path = ArrayCell;
+			sourceTree = "<group>";
+		};
 		BE34C6C9537D1B4E7A38FDAE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -567,6 +578,7 @@
 				A6185195214BB34600E6CC51 /* Rubik-BlackItalic.ttf in Resources */,
 				A618519E214BB34600E6CC51 /* Rubik-MediumItalic.ttf in Resources */,
 				A618514C214BAFC000E6CC51 /* SettingTypeCell.xib in Resources */,
+				A6E35E1D21519D820009DF52 /* ArrayCell.xib in Resources */,
 				A618519F214BB34600E6CC51 /* Rubik-LightItalic.ttf in Resources */,
 				A6185197214BB34600E6CC51 /* Rubik-Light.ttf in Resources */,
 				A618514B214BAFBB00E6CC51 /* DeviceCell.xib in Resources */,
@@ -653,13 +665,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A688B1E82150672A00736BD7 /* NewSettingsViewController.swift in Sources */,
+				A688B1E82150672A00736BD7 /* SettingsViewController.swift in Sources */,
 				A6185102214BAE9900E6CC51 /* UIElements.swift in Sources */,
 				A6185103214BAE9900E6CC51 /* Router.swift in Sources */,
 				A688B1DC21505E9700736BD7 /* StringCell.swift in Sources */,
 				A6185104214BAE9900E6CC51 /* LoginViewController.swift in Sources */,
 				A6185105214BAE9900E6CC51 /* RegisterViewController.swift in Sources */,
-				A6185106214BAE9900E6CC51 /* SettingsViewController.swift in Sources */,
 				A6185107214BAE9900E6CC51 /* MainViewController.swift in Sources */,
 				A6185108214BAE9900E6CC51 /* RegisterDeviceViewController.swift in Sources */,
 				A688B1D321500C4500736BD7 /* Translator.swift in Sources */,
@@ -667,6 +678,7 @@
 				A6185109214BAE9900E6CC51 /* MapViewController.swift in Sources */,
 				A688B1DF215060DD00736BD7 /* BoolCell.swift in Sources */,
 				A618510A214BAE9900E6CC51 /* DataSource.swift in Sources */,
+				A6E35E1C21519D820009DF52 /* ArrayCell.swift in Sources */,
 				A618510B214BAE9900E6CC51 /* ConfigurableCell.swift in Sources */,
 				A618510D214BAE9900E6CC51 /* DeviceCell.swift in Sources */,
 				A618510F214BAE9900E6CC51 /* SettingTypeCell.swift in Sources */,

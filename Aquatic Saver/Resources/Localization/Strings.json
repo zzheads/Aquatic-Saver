@@ -23,7 +23,7 @@
     "Save"                      : "Сохранить",
     "Changes will take effect after reload app" : "Изменения вступят в силу только после перезагрузки приложения",
     "Language"                  : "Язык",
-    "Supported devices"         : "Поддерживаемые устройства",
+    "Supported devices"         : "Поддерживаемые",
     "Server address"            : "Адрес сервера",
     "Socket observing error:"   : "Ошибка данных сокета",
     "No position data"          : "Нет данных позиции",

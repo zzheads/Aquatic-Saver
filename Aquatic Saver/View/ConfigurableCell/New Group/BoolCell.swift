@@ -18,12 +18,13 @@ class BoolCell: UITableViewCell, ConfigurableCell {
     func configure(with item: Setting<Bool>, modify: ((Setting<Bool>?) -> Void)?) {
         self.item = item
         self.modify = modify
-        self.labelKey.text = item.key
+        self.labelKey.text = Translator.shared.translate(item.key) as String
         self.switchValue.isOn = item.value ?? false
         self.switchValue.addTarget(self, action: #selector(self.switchChanged(_:)), for: .valueChanged)
     }
     
     @objc func switchChanged(_ sender: UISwitch) {
+        self.item?.value = sender.isOn
         self.modify?(self.item)
     }
 }

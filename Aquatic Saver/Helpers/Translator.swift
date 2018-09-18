@@ -13,8 +13,7 @@ class Translator {
     
     let dictionary: [String: String]
     var isOn: Bool {
-        let translate = Settings.shared["Language"]?.getValue() as? Bool
-        return translate ?? false
+        return Settings.language.value?.selection == "Russian"
     }
     
     init?(_ filename: String) {

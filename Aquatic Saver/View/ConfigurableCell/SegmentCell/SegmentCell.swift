@@ -11,6 +11,10 @@ import UIKit
 struct ArrayChoice: Codable {
     let array       : [String]
     var selected    : Int
+    
+    var selection   : String {
+        return self.array[self.selected]
+    }
 }
 
 extension ArrayChoice: CustomStringConvertible {
@@ -27,9 +31,10 @@ class SegmentCell: UITableViewCell, ConfigurableCell {
     var modify  : ((Setting<ArrayChoice>?) -> Void)?
     
     func configure(with item: Setting<ArrayChoice>, modify: ((Setting<ArrayChoice>?) -> Void)?) {
+        self.backgroundColor = .clear
         self.item = item
         self.modify = modify
-        self.labelKey.text = item.key
+        self.labelKey.text = Translator.shared.translate(item.key) as String
         self.segmentValue.removeAllSegments()
         guard let array = item.value?.array, let selected = item.value?.selected else { return }
         for i in 0..<array.count {
@@ -40,6 +45,7 @@ class SegmentCell: UITableViewCell, ConfigurableCell {
     }
     
     @objc func segmentChanged(_ sender: UISegmentedControl) {
+        self.item?.value?.selected = sender.selectedSegmentIndex
         self.modify?(self.item)
     }
 }

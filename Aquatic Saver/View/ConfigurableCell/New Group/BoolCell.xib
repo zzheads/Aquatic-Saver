@@ -30,7 +30,7 @@
                             <constraint firstAttribute="width" constant="200" id="PnV-pB-Zfv"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="14"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" red="0.12984204290000001" green="0.31479621260000001" blue="0.44326625930000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gAg-pE-vlJ">
@@ -44,6 +44,7 @@
                     <constraint firstItem="oOp-jM-SSn" firstAttribute="leading" secondItem="Sd5-v4-aBi" secondAttribute="leadingMargin" id="zfS-V7-fRq"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="labelKey" destination="oOp-jM-SSn" id="c2w-Ih-CRF"/>
                 <outlet property="switchValue" destination="gAg-pE-vlJ" id="D0w-yN-cxZ"/>

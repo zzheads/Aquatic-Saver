@@ -71,6 +71,7 @@ struct UIElements {
         
         override func viewDidLoad() {
             super.viewDidLoad()
+            self.view.backgroundColor = Color.lightBlue
             self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.backPressed(_:)))
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: self.settingsButton)
             ViewController.setAttributes(for: [self.navigationItem.leftBarButtonItem, self.navigationItem.rightBarButtonItem])

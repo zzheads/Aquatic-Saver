@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -25,7 +24,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BzV-V5-Wnd">
-                        <rect key="frame" x="16" y="14" width="200" height="17"/>
+                        <rect key="frame" x="16" y="13.5" width="200" height="17"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="200" id="jYB-Ta-9wI"/>
                         </constraints>
@@ -34,14 +33,16 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ya8-6o-GNU">
-                        <rect key="frame" x="232" y="7.5" width="127" height="29"/>
+                        <rect key="frame" x="232" y="8" width="127" height="29"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <segments>
                             <segment title="First"/>
                             <segment title="Second"/>
                         </segments>
-                        <color key="tintColor" red="0.12984204290000001" green="0.31479621260000001" blue="0.44326625930000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.40395771130000002" green="0.63776713269999996" blue="0.74431877670000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </segmentedControl>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="Ya8-6o-GNU" firstAttribute="leading" secondItem="BzV-V5-Wnd" secondAttribute="trailing" constant="16" id="694-6e-bTQ"/>
                     <constraint firstItem="BzV-V5-Wnd" firstAttribute="centerY" secondItem="Rsb-iH-veh" secondAttribute="centerY" id="Z2Y-SB-qmF"/>
@@ -50,6 +51,12 @@
                     <constraint firstAttribute="trailing" secondItem="Ya8-6o-GNU" secondAttribute="trailing" constant="16" id="yMo-x6-xRC"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="color" keyPath="dividerColor">
+                    <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="labelKey" destination="BzV-V5-Wnd" id="NPX-zX-azq"/>
                 <outlet property="segmentValue" destination="Ya8-6o-GNU" id="B7e-tG-wFG"/>

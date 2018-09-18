@@ -24,6 +24,10 @@ extension UserDefaults {
         case password
         case rememberMe
         case scale
+        
+        case baseUrl
+        case devices
+        case language
     }
     
     var email: String? {
@@ -62,5 +66,27 @@ extension UserDefaults {
         self.email = nil
         self.password = nil
         self.rememberMe = nil
+    }
+}
+
+// MARK: Settings
+
+extension UserDefaults {
+    var baseUrl: String? {
+        get { return self.value(forKey: Keys.baseUrl.rawValue) as? String }
+        set { self.set(newValue, forKey: Keys.baseUrl.rawValue) }
+    }
+    
+    var devices: [String]? {
+        get { return self.value(forKey: Keys.devices.rawValue) as? [String] }
+        set { self.set(newValue, forKey: Keys.devices.rawValue) }
+    }
+    
+    var language: ArrayChoice? {
+        get {
+            guard let json = self.value(forKey: Keys.language.rawValue) as? JSON else { return nil }
+            return ArrayChoice(fromJSON: json)
+        }
+        set { self.set(newValue.toJSON, forKey: Keys.language.rawValue) }
     }
 }
