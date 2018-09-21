@@ -19,9 +19,9 @@ extension Device {
         let status = self.status ?? .unknown
         var color: UIColor = .clear
         switch status {
-        case .online    : color = .green
-        case .offline   : color = UIElements.Color.darkRed
-        case .unknown   : color = UIElements.Color.darkBlue
+        case .online    : color = UIElements.Color.green
+        case .offline   : color = UIColor(red: 103/255, green: 163/255, blue: 190/255, alpha: 1.0)
+        case .unknown   : color = .gray
         }
         return color
     }

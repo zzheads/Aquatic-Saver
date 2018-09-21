@@ -12,6 +12,8 @@ enum AlarmType: String, Codable {
     case overspeed
     case lowBattery
     case sos
+    case shock
+    case powerCut
 }
 
 class EventAttributes: Attributes {

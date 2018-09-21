@@ -65,6 +65,12 @@ class SettingsViewController: UIElements.ViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         Settings.load()
+        if let defaults = UserDefaults.store {
+            print("UserDefailts: \(defaults.description)")
+            print("Base URL: \(defaults.baseUrl ?? "nil")")
+            print("Supported devices: \(defaults.devices ?? [])")
+            print("Language: \(defaults.language ?? ArrayChoice(array: [], selected: 0))")
+        }
         self.tableView.reloadData()
     }
     

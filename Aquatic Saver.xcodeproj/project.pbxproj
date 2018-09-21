@@ -79,6 +79,7 @@
 		A688B1E42150629000736BD7 /* SegmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A688B1E32150629000736BD7 /* SegmentCell.swift */; };
 		A688B1E6215062DA00736BD7 /* SegmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A688B1E5215062DA00736BD7 /* SegmentCell.xib */; };
 		A688B1E82150672A00736BD7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A688B1E72150672A00736BD7 /* SettingsViewController.swift */; };
+		A6AC5E0A2155774C00106D7E /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AC5E092155774C00106D7E /* DateFormatter.swift */; };
 		A6E35E1C21519D820009DF52 /* ArrayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E35E1A21519D820009DF52 /* ArrayCell.swift */; };
 		A6E35E1D21519D820009DF52 /* ArrayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6E35E1B21519D820009DF52 /* ArrayCell.xib */; };
 /* End PBXBuildFile section */
@@ -151,6 +152,7 @@
 		A6A7662821416CC600F9459C /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		A6A7662A21416CDD00F9459C /* CellTower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTower.swift; sourceTree = "<group>"; };
 		A6A7662C21416D0000F9459C /* WiFiAccessPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiAccessPoint.swift; sourceTree = "<group>"; };
+		A6AC5E092155774C00106D7E /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		A6B6CB90213E7AFC003E4BBC /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = "Aquatic Saver/View/MapViewController.swift"; sourceTree = SOURCE_ROOT; };
 		A6B6CB92213E8CC9003E4BBC /* UIViewController +.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController +.swift"; sourceTree = "<group>"; };
 		A6B6CB94213EAD40003E4BBC /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 				A6B6CB92213E8CC9003E4BBC /* UIViewController +.swift */,
 				A6344A8C213449EC0064AABB /* Info.plist */,
 				A688B1D221500C4500736BD7 /* Translator.swift */,
+				A6AC5E092155774C00106D7E /* DateFormatter.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -665,6 +668,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6AC5E0A2155774C00106D7E /* DateFormatter.swift in Sources */,
 				A688B1E82150672A00736BD7 /* SettingsViewController.swift in Sources */,
 				A6185102214BAE9900E6CC51 /* UIElements.swift in Sources */,
 				A6185103214BAE9900E6CC51 /* Router.swift in Sources */,

@@ -64,7 +64,10 @@ class MapViewController: UIElements.ViewController {
         if self.marker == nil {
             self.marker = device.marker(at: CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
             self.marker?.map = self.map
+        } else {
+            device.update(self.marker)
         }
+        
         self.marker?.position = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         self.updateCamera()
     }
@@ -111,7 +114,8 @@ extension MapViewController: ObjectsObservable {
     }
     
     func socketDidReceived(_ events: [Event]) {
-        self.showAlert(title: "New events", message: "\(events)", style: .alert)
+        let message = events.compactMap{"\($0.serverTime ?? ""): \($0.description), "}.reduce("", +).dropLast()
+        PushNotification(title: "Новые события: ", message: String(message)).push()
     }
 }
 

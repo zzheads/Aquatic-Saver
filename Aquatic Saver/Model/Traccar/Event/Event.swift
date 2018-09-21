@@ -17,6 +17,11 @@ struct Event: Codable {
     var serverTime  : String?
     var type        : EventType?
     var deviceName  : String?
+    
+    static func eventsFor(deviceIds: [Int], from: String, to: String) -> Resource<Event> {
+        let queryString = deviceIds.compactMap{"deviceId=\($0)&"}.reduce("", +) + "from=\(from)&to=\(to)"
+        return Resource<Event>(endpoint: "reports/events?\(queryString)", method: .get)
+    }
 }
 
 extension Event: Extensible {
@@ -49,6 +54,8 @@ extension Event: CustomStringConvertible {
                     return "У устройства низкий (??) заряд батареи. Рекомендуется сменить режим трекера на экономный"
                 }
                 return "У устройства низкий (\(battery)%) заряд батареи. Рекомендуется сменить режим трекера на экономный"
+            case .powerCut      : return "Power cut"
+            case .shock         : return "Shock"
             }
         }
     }

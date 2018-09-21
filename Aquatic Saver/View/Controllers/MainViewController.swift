@@ -10,27 +10,30 @@ import UIKit
 import Material
 
 class MainViewController: UIElements.ViewController {
-    @IBOutlet weak var labelName: UILabel!
-    @IBOutlet weak var labelId: UILabel!
-    @IBOutlet weak var labelNumber: UILabel!
     @IBOutlet weak var labelStatus: UILabel!
-    @IBOutlet weak var labelUpdated: UILabel!
+    @IBOutlet weak var labelName: UILabel!
+    @IBOutlet weak var labelUniqueId: UILabel!
+    @IBOutlet weak var labelSimNumber: UILabel!
+    @IBOutlet weak var labelModel: UILabel!
+    @IBOutlet weak var labelLastUpdated: UILabel!
     @IBOutlet weak var labelSOS1: UILabel!
     @IBOutlet weak var labelSOS2: UILabel!
     @IBOutlet weak var labelSOS3: UILabel!
+    @IBOutlet weak var valueStatus: UILabel!
+    @IBOutlet weak var valueName: UILabel!
+    @IBOutlet weak var valueId: UILabel!
+    @IBOutlet weak var valueNumber: UILabel!
+    @IBOutlet weak var valueModel: UILabel!
+    @IBOutlet weak var valueUpdated: UILabel!
     
-    @IBOutlet weak var uniqueIdLabel: UILabel!
-    @IBOutlet weak var simNumberLabel: UILabel!
-    @IBOutlet weak var lastUpdatedLabel: UILabel!
-    
-    lazy var allLabels: [UILabel] = [self.labelName, self.labelId, self.labelNumber, self.labelStatus, self.labelUpdated, self.labelSOS1, self.labelSOS2, self.labelSOS3]
+    lazy var allLabels: [UILabel] = [self.labelStatus, self.labelName, self.labelUniqueId, self.labelSimNumber, self.labelModel, self.labelLastUpdated, self.labelSOS1, self.labelSOS2, self.labelSOS3]
     
     enum TextFieldsKey: Int {
-        case name = 3, model = 4, sos1 = 0, sos2 = 1, sos3 = 2
+        case sos1 = 0, sos2 = 1, sos3 = 2
     }
     
-    lazy var labels : [TextFieldsKey: UILabel] = [.name: self.labelName, .model: self.labelStatus, .sos1: self.labelSOS1, .sos2: self.labelSOS2, .sos3: self.labelSOS3]
-    let textFields  : [TextFieldsKey: TextField] = [.name: UIElements.textField(), .sos1: UIElements.textField(), .sos2: UIElements.textField(), .sos3: UIElements.textField(), .model: UIElements.textField()]
+    lazy var labels : [TextFieldsKey: UILabel] = [.sos1: self.labelSOS1, .sos2: self.labelSOS2, .sos3: self.labelSOS3]
+    let textFields  : [TextFieldsKey: TextField] = [.sos1: UIElements.textField(), .sos2: UIElements.textField(), .sos3: UIElements.textField()]
 
     let buttons = [UIElements.raisedButton("Update"), UIElements.raisedButton("Delete", backColor: UIElements.Color.darkRed), UIElements.raisedButton("on Map"), UIElements.raisedButton("Register")]
     
@@ -76,31 +79,40 @@ class MainViewController: UIElements.ViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         APIClient.default.allDevices()
-            .done{ self.device = $0.last }
+            .done{ devices in
+                self.device = devices.last
+                if let device = self.device {
+                    APIClient.default.events([device.id!])
+                        .done { events in
+                            events.forEach { print("\($0.serverTime!.localDate): \($0.description),") }
+                        }
+                        .catch { print($0) }
+                }
+            }
             .catch{ self.showAlert(title: "Getting device error:", message: $0.localizedDescription, style: .alert) }
     }
     
-    func setButtons(_ deviceIsNil: Bool) {
-        self.buttons[2].isEnabled = deviceIsNil ? false : true
-        self.buttons[2].backgroundColor = deviceIsNil ? UIElements.Color.darkBlue.withAlphaComponent(0.5) : UIElements.Color.darkBlue
-        self.buttons[3].isEnabled = deviceIsNil ? true : false
-        self.buttons[3].backgroundColor = deviceIsNil ? UIElements.Color.darkBlue : UIElements.Color.darkBlue.withAlphaComponent(0.5)
+    func setButtons(_ device: Device?) {
+        self.buttons[0].isEnabled = (device?.status == DeviceStatus.online)
+        self.buttons[0].backgroundColor = (device?.status == DeviceStatus.online) ? UIElements.Color.darkBlue : UIElements.Color.darkBlue.withAlphaComponent(0.5)
+        self.buttons[2].isEnabled = (device == nil) ? false : true
+        self.buttons[2].backgroundColor = (device == nil) ? UIElements.Color.darkBlue.withAlphaComponent(0.5) : UIElements.Color.darkBlue
+        self.buttons[3].isEnabled = (device == nil) ? true : false
+        self.buttons[3].backgroundColor = (device == nil) ? UIElements.Color.darkBlue : UIElements.Color.darkBlue.withAlphaComponent(0.5)
     }
     
     func configureView(_ device: Device?) {
-        guard let device = device else {
-            self.setButtons(true)
-            return
-        }
-        self.setButtons(false)
+        self.setButtons(device)
 
-        self.uniqueIdLabel.text = device.uniqueId
-        self.simNumberLabel.text = device.phone
-        self.lastUpdatedLabel.text = device.lastUpdate
+        self.valueStatus.text = "\(device?.status ?? .unknown)"
+        self.valueStatus.textColor = device?.markerColor ?? UIElements.Color.darkBlue
+        self.valueName.text = device?.name
+        self.valueId.text = device?.uniqueId
+        self.valueNumber.text = device?.phone
+        self.valueModel.text = device?.model
+        self.valueUpdated.text = device?.lastUpdate?.localDate
         
-        self.textFields[.name]?.text = "\(device.name ?? "") (\(device.status ?? .unknown))"
-        self.textFields[.model]?.text = device.model
-        if let sosNumbers = device.attributes?.sosNumbers {
+        if let sosNumbers = device?.attributes?.sosNumbers {
             for i in 0..<sosNumbers.count {
                 let key = TextFieldsKey(rawValue: i)!
                 self.textFields[key]?.text = sosNumbers[i]
@@ -116,8 +128,6 @@ class MainViewController: UIElements.ViewController {
                 numbers.append(number)
             }
         }
-        device.name = self.textFields[.name]?.text
-        device.model = self.textFields[.model]?.text
         device.attributes?.sosNumbers = numbers
         
         sender.isEnabled = false
@@ -152,6 +162,13 @@ class MainViewController: UIElements.ViewController {
             let mapController = segue.destination as! MapViewController
             mapController.device = self.device
         }
+    }
+}
+
+extension MainViewController: ObjectsObservable {
+    func socketDidReceived(_ devices: [Device]) {
+        self.device = devices.first
+        self.configureView(self.device)
     }
 }
 

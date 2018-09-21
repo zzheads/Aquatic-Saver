@@ -124,4 +124,12 @@ final class APIClient {
                 .catch { resolver.reject($0) }
         }
     }
+    
+    func events(_ deviceIds: [Int], from: String = "2017-01-01", to: String = "2100-01-01") -> Promise<[Event]> {
+        return Promise<[Event]>() { resolver in
+            self.webService.fetchArray(resource: Event.eventsFor(deviceIds: deviceIds, from: from, to: to))
+                .done { resolver.fulfill($0) }
+                .catch { resolver.reject($0) }
+        }
+    }
 }

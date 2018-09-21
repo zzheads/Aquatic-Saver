@@ -14,6 +14,7 @@ struct UIElements {
         static let darkBlue = UIColor(red: 33/255, green: 80/255, blue: 113/255, alpha: 1.0)
         static let lightBlue = UIColor(red: 224/255, green: 239/255, blue: 251/255, alpha: 1.0)
         static let darkRed = UIColor(red: 188/255, green: 31/255, blue: 86/255, alpha: 1.0)
+        static let green = UIColor(red: 115/255, green: 168/255, blue: 78/255, alpha: 1.0)
     }
     
     struct Font {

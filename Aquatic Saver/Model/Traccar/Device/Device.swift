@@ -76,4 +76,11 @@ extension Device {
         marker.icon = GMSMarker.markerImage(with: self.markerColor)
         return marker
     }
+    
+    func update(_ marker: GMSMarker?) {
+        guard let marker = marker else { return }
+        marker.title = self.name
+        marker.snippet = self.onMapDescription
+        marker.icon = GMSMarker.markerImage(with: self.markerColor)
+    }
 }

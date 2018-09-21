@@ -84,13 +84,13 @@ class Settings {
         default         : break
         }
     }
-    
+
     static func load(_ setting: SettingType) {
         guard let key = Settings.shared[setting.key] else { return }
         switch key {
-        case .baseUrl   : setting.setValue(UserDefaults.store?.baseUrl as Any)
-        case .devices   : setting.setValue(UserDefaults.store?.devices as Any)
-        case .language  : setting.setValue(UserDefaults.store?.language as Any)
+        case .baseUrl   : setting.setValue(UserDefaults.store?.baseUrl ?? "http://62.109.28.53/api/" as Any)
+        case .devices   : setting.setValue(UserDefaults.store?.devices ?? ["ZX-612", "ZX-302"] as Any)
+        case .language  : setting.setValue(UserDefaults.store?.language ?? ArrayChoice(array: ["Russian", "English"], selected: 0) as Any)
         default         : break
         }
     }

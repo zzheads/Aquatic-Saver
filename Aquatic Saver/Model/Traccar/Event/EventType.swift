@@ -47,13 +47,15 @@ enum EventType: RawRepresentable, Codable {
     var title: String {
         switch self {
         case .alarm(let alarmType)  :
-            guard let alarmType = alarmType else {
+            guard let alarm = alarmType else {
                 return "Предупреждение"
             }
-            switch alarmType {
+            switch alarm {
             case .overspeed     : return "Устройство снято с руки"
             case .sos           : return "Устройство просит о помощи"
             case .lowBattery    : return "Низкий заряд батареи устройства"
+            case .shock         : return "Shock"
+            case .powerCut      : return "Power cut"
             }
             
         case .deviceOnline          : return "Устройство появилось в сети"
