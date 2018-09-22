@@ -60,4 +60,8 @@
     "Invalid email"                 : "Неверный email:",
     "Password and verify password are not equal"    : "Пароль и проверочный пароль должны быть одинаковыми",
     "Resource is nil:"              : "Нулевой ресурс:",
+    "Status:"                       : "Статус:",
+    "offline"                       : "Не в сети",
+    "online"                        : "В сети",
+    "unknown"                       : "Неизвестно",
 }

@@ -13,6 +13,12 @@ PODS:
   - Motion (1.4.3):
     - Motion/Core (= 1.4.3)
   - Motion/Core (1.4.3)
+  - PhoneNumberKit (2.1.0):
+    - PhoneNumberKit/PhoneNumberKitCore (= 2.1.0)
+    - PhoneNumberKit/UIKit (= 2.1.0)
+  - PhoneNumberKit/PhoneNumberKitCore (2.1.0)
+  - PhoneNumberKit/UIKit (2.1.0):
+    - PhoneNumberKit/PhoneNumberKitCore
   - PromiseKit (6.4.0):
     - PromiseKit/CorePromise (= 6.4.0)
     - PromiseKit/Foundation (= 6.4.0)
@@ -29,6 +35,7 @@ DEPENDENCIES:
   - GoogleMaps
   - IQKeyboardManager
   - Material (~> 2.0)
+  - PhoneNumberKit (~> 2.1)
   - PromiseKit (~> 6.0)
   - Starscream (~> 3.0.2)
 
@@ -39,6 +46,7 @@ SPEC REPOS:
     - IQKeyboardManager
     - Material
     - Motion
+    - PhoneNumberKit
     - PromiseKit
     - Starscream
 
@@ -48,9 +56,10 @@ SPEC CHECKSUMS:
   IQKeyboardManager: 79c57795f5c2408d259d37b9da2ed07efcbb5225
   Material: 4ed78690b09ffd148b5ffab6b4367fb1d8da1cd3
   Motion: 153ba49692997888556c7a95207278a8b1f8be95
+  PhoneNumberKit: 62003f40ff75315fd3738286558bc365365ac222
   PromiseKit: ae3616f45d7bb9bf4ff1e91abc9b7a8c48a340e0
   Starscream: faf918b2f2eff7d5dd21180646bf015a669673bd
 
-PODFILE CHECKSUM: 57763343caa01547b5925d3b9569c8d3b588e616
+PODFILE CHECKSUM: 9ad7b7c68f061242eb97cac249bda8479997b261
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.0.beta.1

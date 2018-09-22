@@ -8,6 +8,7 @@
 
 import UIKit
 import Material
+import PhoneNumberKit
 
 class MainViewController: UIElements.ViewController {
     @IBOutlet weak var labelStatus: UILabel!
@@ -33,7 +34,7 @@ class MainViewController: UIElements.ViewController {
     }
     
     lazy var labels : [TextFieldsKey: UILabel] = [.sos1: self.labelSOS1, .sos2: self.labelSOS2, .sos3: self.labelSOS3]
-    let textFields  : [TextFieldsKey: TextField] = [.sos1: UIElements.textField(), .sos2: UIElements.textField(), .sos3: UIElements.textField()]
+    lazy var textFields  : [TextFieldsKey: PhoneNumberTextField] = [.sos1: UIElements.phoneField(font: UIElements.Font.medium(14.0)), .sos2: UIElements.phoneField(font: UIElements.Font.medium(14.0)), .sos3: UIElements.phoneField(font: UIElements.Font.medium(14.0))]
 
     let buttons = [UIElements.raisedButton("Update"), UIElements.raisedButton("Delete", backColor: UIElements.Color.darkRed), UIElements.raisedButton("on Map"), UIElements.raisedButton("Register")]
     
@@ -104,7 +105,7 @@ class MainViewController: UIElements.ViewController {
     func configureView(_ device: Device?) {
         self.setButtons(device)
 
-        self.valueStatus.text = "\(device?.status ?? .unknown)"
+        self.valueStatus.text = Translator.shared.translate("\(device?.status ?? .unknown)") as String
         self.valueStatus.textColor = device?.markerColor ?? UIElements.Color.darkBlue
         self.valueName.text = device?.name
         self.valueId.text = device?.uniqueId

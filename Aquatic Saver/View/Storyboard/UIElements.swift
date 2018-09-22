@@ -8,6 +8,7 @@
 
 import Foundation
 import Material
+import PhoneNumberKit
 
 struct UIElements {
     struct Color {
@@ -99,6 +100,15 @@ struct UIElements {
         @objc func settingsPressed(_ sender: UIBarButtonItem) {
             self.navigationController?.performSegue(withIdentifier: Router.SegueID.toSettings.rawValue, sender: self)
         }
+    }
+    
+    static func phoneField(_ placeholder: String? = nil, color: UIColor = Color.darkBlue, font: UIFont? = Font.regular(12.0)) -> PhoneNumberTextField {
+        let textField = PhoneNumberTextField()
+        textField.font = font
+        textField.placeholder = placeholder
+        textField.textColor = color
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
     }
     
     static func textField(_ placeholder: String? = nil, color: UIColor = Color.darkBlue, font: UIFont? = Font.regular(12.0), isPass: Bool = false) -> TextField {

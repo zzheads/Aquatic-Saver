@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1000"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C800D07F05CE2AAC970466BF3A29C7AA"
+               BlueprintIdentifier = "C5B76EFC89242C4FC7001508D4A48209"
                BuildableName = "Pods_Aquatic_Saver.framework"
                BlueprintName = "Pods-Aquatic Saver"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C800D07F05CE2AAC970466BF3A29C7AA"
+            BlueprintIdentifier = "C5B76EFC89242C4FC7001508D4A48209"
             BuildableName = "Pods_Aquatic_Saver.framework"
             BlueprintName = "Pods-Aquatic Saver"
             ReferencedContainer = "container:Pods.xcodeproj">

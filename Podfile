@@ -9,6 +9,7 @@ target 'Aquatic Saver' do
     pod 'Material', '~> 2.0'
     pod 'IQKeyboardManager'
     pod 'Starscream', '~> 3.0.2'
+    pod 'PhoneNumberKit', '~> 2.1'
 end
 
 post_install do |installer|
