@@ -25,3 +25,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
+extension AppDelegate: ObjectsObservable {
+    func socketDidReceived(_ events: [Event]) {
+        for event in events {
+            guard let type = event.type else { continue }
+            switch type {
+            case .alarm     :
+                guard let alarmType = event.attributes?.alarm else { continue }
+                if alarmType == .sos {
+                    PushNotification(title: "SOS", message: "\(event.serverTime?.localDate ?? ""): Device (id: \(event.deviceId ?? -1)) reporting SOS signal!\n Coordinates are in position: \(event.positionId ?? -1)").push()
+                }
+                
+            default                     : break
+            }
+        }
+    }
+}

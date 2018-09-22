@@ -59,18 +59,8 @@ extension Event: CustomStringConvertible {
             }
         }
     }
-}
-
-extension Array where Element == Event {
-    var deviceIds: [Int] {
-        var result = [Int]()
-        for event in self {
-            if let deviceId = event.deviceId {
-                if !result.contains(deviceId) {
-                    result.append(deviceId)
-                }
-            }
-        }
-        return result
+    
+    var isSos: Bool {
+        return self.attributes?.alarm == .sos
     }
 }

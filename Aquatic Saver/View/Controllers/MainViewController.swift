@@ -85,7 +85,9 @@ class MainViewController: UIElements.ViewController {
                 if let device = self.device {
                     APIClient.default.events([device.id!])
                         .done { events in
-                            events.forEach { print("\($0.serverTime!.localDate): \($0.description),") }
+                            for event in events {
+                                print("\(event.serverTime!.localDate): \(event.description), \(event.toJSON ?? [:]),")
+                            }
                         }
                         .catch { print($0) }
                 }

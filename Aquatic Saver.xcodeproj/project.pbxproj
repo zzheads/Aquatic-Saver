@@ -82,6 +82,7 @@
 		A6AC5E0A2155774C00106D7E /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6AC5E092155774C00106D7E /* DateFormatter.swift */; };
 		A6E35E1C21519D820009DF52 /* ArrayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E35E1A21519D820009DF52 /* ArrayCell.swift */; };
 		A6E35E1D21519D820009DF52 /* ArrayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6E35E1B21519D820009DF52 /* ArrayCell.xib */; };
+		A6F619552156D9D000192525 /* AlarmType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F619542156D9D000192525 /* AlarmType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -166,6 +167,7 @@
 		A6DC7E6C2136A97500BB7552 /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		A6E35E1A21519D820009DF52 /* ArrayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayCell.swift; sourceTree = "<group>"; };
 		A6E35E1B21519D820009DF52 /* ArrayCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArrayCell.xib; sourceTree = "<group>"; };
+		A6F619542156D9D000192525 /* AlarmType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmType.swift; sourceTree = "<group>"; };
 		FA58BD56942DFC47B4C1A9BC /* Pods-Aquatic Saver.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aquatic Saver.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Aquatic Saver/Pods-Aquatic Saver.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -281,12 +283,12 @@
 				A6344A80213449EC0064AABB /* AppDelegate.swift */,
 				A6DC7E6A2136A3DB00BB7552 /* Setting.swift */,
 				A6DC7E6C2136A97500BB7552 /* JSON.swift */,
-				A6344A89213449EC0064AABB /* LaunchScreen.storyboard */,
 				A608E2EF213C5BAD003D2C23 /* Character + Int + String +.swift */,
 				A6B6CB92213E8CC9003E4BBC /* UIViewController +.swift */,
-				A6344A8C213449EC0064AABB /* Info.plist */,
 				A688B1D221500C4500736BD7 /* Translator.swift */,
 				A6AC5E092155774C00106D7E /* DateFormatter.swift */,
+				A6344A89213449EC0064AABB /* LaunchScreen.storyboard */,
+				A6344A8C213449EC0064AABB /* Info.plist */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -424,6 +426,7 @@
 				A688B1C6214FFB2400736BD7 /* EventAttributes.swift */,
 				A688B1C8214FFB6600736BD7 /* Event.swift */,
 				A688B1CA214FFB9600736BD7 /* EventType.swift */,
+				A6F619542156D9D000192525 /* AlarmType.swift */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -689,6 +692,7 @@
 				A618510D214BAE9900E6CC51 /* DeviceCell.swift in Sources */,
 				A618510F214BAE9900E6CC51 /* SettingTypeCell.swift in Sources */,
 				A6185110214BAE9900E6CC51 /* PushNotification.swift in Sources */,
+				A6F619552156D9D000192525 /* AlarmType.swift in Sources */,
 				A6185111214BAE9900E6CC51 /* NotificationManager.swift in Sources */,
 				A6185112214BAE9900E6CC51 /* Resource.swift in Sources */,
 				A6185113214BAE9900E6CC51 /* AppError.swift in Sources */,
